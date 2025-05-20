@@ -648,25 +648,34 @@ const Service = () => {
           
           {/* Service Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12 md:mt-16">
-            <div className="bg-white/10 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/20">
+            <div className="bg-blue-600 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-blue-400 transition-all duration-300 group relative">
               <div className="mb-2 sm:mb-3 md:mb-4">
                 <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">Professional Detailing</h3>
               </div>
-              <p className="text-white/80 text-xs sm:text-sm md:text-base">Our certified technicians use only premium products and techniques to restore your vehicle's finish.</p>
+              <p className="text-white text-xs sm:text-sm md:text-base">Our certified technicians use only premium products and techniques to restore your vehicle's finish.</p>
+              <div className="absolute inset-0 bg-blue-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg sm:rounded-xl">
+                <span className="text-white font-bold text-lg">DETAILING SERVICE</span>
+              </div>
             </div>
 
-            <div className="bg-white/10 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/20">
+            <div className="bg-blue-600 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-blue-400 transition-all duration-300 group relative">
               <div className="mb-2 sm:mb-3 md:mb-4">
                 <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">Paint Protection</h3>
               </div>
-              <p className="text-white/80 text-xs sm:text-sm md:text-base">Advanced ceramic coatings and paint protection films to preserve your vehicle's exterior.</p>
+              <p className="text-white text-xs sm:text-sm md:text-base">Advanced ceramic coatings and paint protection films to preserve your vehicle's exterior.</p>
+              <div className="absolute inset-0 bg-blue-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg sm:rounded-xl">
+                <span className="text-white font-bold text-lg">PROTECTION SERVICE</span>
+              </div>
             </div>
 
-            <div className="bg-white/10 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/20">
+            <div className="bg-blue-600 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-blue-400 transition-all duration-300 group relative">
               <div className="mb-2 sm:mb-3 md:mb-4">
                 <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">Premium Results</h3>
               </div>
-              <p className="text-white/80 text-xs sm:text-sm md:text-base">See the difference with our award-winning detailing services that leave your vehicle looking showroom-new.</p>
+              <p className="text-white text-xs sm:text-sm md:text-base">See the difference with our award-winning detailing services that leave your vehicle looking showroom-new.</p>
+              <div className="absolute inset-0 bg-blue-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg sm:rounded-xl">
+                <span className="text-white font-bold text-lg">PREMIUM SERVICE</span>
+              </div>
             </div>
           </div>
         </div>
