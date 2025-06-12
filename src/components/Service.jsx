@@ -63,105 +63,138 @@ const Service = () => {
     { src: carwashing4, title: "Ceramic Coating", description: "Long-lasting paint protection" }
   ];
   
-  // Service data with more detailed information for modals
-  const servicesData = {
-    "Auto Detailing": {
-      title: "Auto Detailing",
-      shortDescription: "Complete interior and exterior detailing services",
-      icon: faCar,
-      gradientFrom: "teal-400",
-      gradientTo: "blue-500",
-      hoverColor: "teal-600",
-      fullDescription: "Our comprehensive auto detailing service includes deep cleaning of both interior and exterior surfaces. We use premium products and professional techniques to restore your vehicle to showroom condition.",
-      features: [
-        "Exterior hand wash and dry",
-        "Clay bar treatment to remove contaminants",
-        "Interior vacuum and deep cleaning",
-        "Leather conditioning and treatment",
-        "Dashboard and trim restoration",
-        "Tire and wheel detailing"
-      ],
-      image: car1,
-      price: "Starting at $199"
-    },
-    "Paint Correction": {
-      title: "Paint Correction",
-      shortDescription: "Professional polishing services",
-      icon: faSprayCan,
-      gradientFrom: "orange-400",
-      gradientTo: "pink-500",
-      hoverColor: "orange-600",
-      fullDescription: "Our paint correction service removes swirl marks, scratches, and oxidation to restore your vehicle's finish to a mirror-like shine. We use multi-stage polishing techniques and professional-grade compounds.",
-      features: [
-        "Paint depth analysis",
-        "Machine polishing with multiple stages",
-        "Swirl mark and scratch removal",
-        "Oxidation treatment",
-        "High-gloss finish restoration",
-        "Final protective sealant"
-      ],
-      image: car3,
-      price: "Starting at $299"
-    },
-    "Window Tinting": {
-      title: "Window Tinting",
-      shortDescription: "Premium tinting solutions",
-      icon: faWindowMaximize,
-      gradientFrom: "purple-400",
-      gradientTo: "indigo-500",
-      hoverColor: "purple-600",
-      fullDescription: "Our window tinting service uses premium ceramic films that reduce heat, block UV rays, and enhance privacy. All installations are performed by certified technicians for a perfect, bubble-free finish.",
-      features: [
-        "High-quality ceramic film options",
-        "UV ray blocking (99%)",
-        "Heat rejection up to 80%",
-        "Glare reduction",
-        "Lifetime warranty",
-        "Computer-cut precision fitting"
-      ],
-      image: car4,
-      price: "Starting at $249"
-    },
-    "Ceramic Coating": {
-      title: "Ceramic Coating",
-      shortDescription: "Long-lasting protection",
-      customIcon: wash1,
-      gradientFrom: "amber-400",
-      gradientTo: "red-500",
-      hoverColor: "amber-600",
-      fullDescription: "Our ceramic coating service provides long-lasting protection against environmental contaminants, UV damage, and water spots. The hydrophobic properties make maintenance easier while enhancing gloss and depth.",
-      features: [
-        "9H hardness ceramic protection",
-        "5+ years of durability",
-        "Enhanced gloss and color depth",
-        "Superior hydrophobic properties",
-        "Chemical resistance",
-        "UV damage prevention"
-      ],
-      image: car2,
-      price: "Starting at $599"
-    },
-    "Paint Protection": {
-      title: "Paint Protection",
-      shortDescription: "Film installation",
-      customIcon: wash2,
-      gradientFrom: "emerald-400",
-      gradientTo: "cyan-500",
-      hoverColor: "emerald-600",
-      fullDescription: "Our paint protection film (PPF) installation provides the ultimate defense against rock chips, scratches, and road debris. Our self-healing film maintains clarity while providing invisible armor for your vehicle.",
-      features: [
-        "Self-healing technology",
-        "Impact and scratch resistance",
-        "Invisible protection",
-        "Custom cut for perfect fit",
-        "UV and stain resistance",
-        "10-year warranty"
-      ],
-      image: car5,
-      price: "Starting at $899"
-    }
-  };
+  // Professional service data with compelling, business-focused content
+const servicesData = {
+  "Auto Detailing": {
+    title: "Premium Auto Detailing",
+    shortDescription: "Complete interior and exterior restoration services",
+    icon: faCar,
+    gradientFrom: "teal-400",
+    gradientTo: "blue-500",
+    hoverColor: "teal-600",
+    fullDescription: "Our comprehensive auto detailing service combines advanced techniques with premium-grade products to restore your vehicle to showroom condition. Every service is performed by certified technicians who take pride in delivering exceptional results that exceed industry standards.",
+    features: [
+      "Professional hand wash and chamois drying technique",
+      "Clay bar treatment to remove embedded contaminants",
+      "Deep interior cleaning with commercial-grade equipment",
+      "Leather conditioning and protective treatment",
+      "Dashboard and trim restoration using specialized products",
+      "Complete tire and wheel detailing with protective coating"
+    ],
+    image: car1,
+    price: "Starting at $199",
+    guarantee: "100% satisfaction guaranteed or we'll make it right"
+  },
+  "Paint Correction": {
+    title: "Professional Paint Correction",
+    shortDescription: "Multi-stage polishing and restoration services",
+    icon: faSprayCan,
+    gradientFrom: "orange-400",
+    gradientTo: "pink-500",
+    hoverColor: "orange-600",
+    fullDescription: "Our paint correction specialists use precision polishing techniques and professional-grade compounds to eliminate swirl marks, scratches, and oxidation. Each vehicle receives a customized treatment plan based on paint condition analysis to achieve optimal results.",
+    features: [
+      "Comprehensive paint depth and condition analysis",
+      "Multi-stage machine polishing with graduated compounds",
+      "Swirl mark and light scratch elimination",
+      "Oxidation removal and color restoration",
+      "High-gloss finish with enhanced clarity and depth",
+      "Protective sealant application for lasting results"
+    ],
+    image: car3,
+    price: "Starting at $299",
+    guarantee: "Mirror-finish results backed by our craftsmanship warranty"
+  },
+  "Window Tinting": {
+    title: "Ceramic Window Tinting",
+    shortDescription: "Premium film installation with lifetime warranty",
+    icon: faWindowMaximize,
+    gradientFrom: "purple-400",
+    gradientTo: "indigo-500",
+    hoverColor: "purple-600",
+    fullDescription: "Our window tinting service utilizes the highest quality ceramic films available, installed by certified technicians using precision cutting and application techniques. Every installation meets legal requirements while maximizing heat rejection and UV protection.",
+    features: [
+      "Premium ceramic film technology for superior performance",
+      "99% UV ray blocking for interior and occupant protection",
+      "Up to 80% heat rejection for improved comfort and efficiency",
+      "Significant glare reduction for safer driving",
+      "Lifetime warranty against bubbling, peeling, and fading",
+      "Computer-cut precision templates for perfect fitment"
+    ],
+    image: car4,
+    price: "Starting at $249",
+    guarantee: "Lifetime warranty with professional installation guarantee"
+  },
+  "Ceramic Coating": {
+    title: "Ceramic Paint Coating",
+    shortDescription: "Long-term paint protection with 5+ year durability",
+    customIcon: wash1,
+    gradientFrom: "amber-400",
+    gradientTo: "red-500",
+    hoverColor: "amber-600",
+    fullDescription: "Our ceramic coating service provides the ultimate in paint protection and enhancement. Using industry-leading 9H ceramic technology, we create a permanent bond with your vehicle's paint that delivers years of protection against environmental contaminants while enhancing gloss and color depth.",
+    features: [
+      "9H hardness ceramic protection exceeding OEM paint durability",
+      "5+ years of verified protection and performance",
+      "Enhanced gloss and color depth for premium appearance",
+      "Superior hydrophobic properties for easy maintenance",
+      "Chemical and contaminant resistance",
+      "UV damage prevention and color fade protection"
+    ],
+    image: car2,
+    price: "Starting at $599",
+    guarantee: "5-year performance warranty with certified application"
+  },
+  "Paint Protection": {
+    title: "Paint Protection Film",
+    shortDescription: "Self-healing film installation with 10-year warranty",
+    customIcon: wash2,
+    gradientFrom: "emerald-400",
+    gradientTo: "cyan-500",
+    hoverColor: "emerald-600",
+    fullDescription: "Our paint protection film installation provides the highest level of defense against road debris, stone chips, and environmental damage. Using advanced self-healing technology, our premium films maintain optical clarity while delivering invisible protection that preserves your vehicle's value.",
+    features: [
+      "Self-healing technology repairs minor scratches automatically",
+      "Superior impact and abrasion resistance",
+      "Optically clear protection maintains original appearance",
+      "Custom-cut templates ensure precise coverage and fitment",
+      "UV and stain resistance for long-term clarity",
+      "10-year manufacturer warranty with professional installation"
+    ],
+    image: car5,
+    price: "Starting at $899",
+    guarantee: "10-year warranty covering film performance and installation"
+  }
+};
 
+// Professional service highlights
+const serviceHighlights = {
+  quality: "Industry-Leading Standards",
+  experience: "Certified Technicians",
+  warranty: "Comprehensive Guarantees",
+  equipment: "Professional-Grade Products",
+  service: "Personalized Consultation",
+  convenience: "Flexible Scheduling"
+};
+
+// Trust indicators
+const trustIndicators = [
+  "Fully Licensed and Insured",
+  "Certified Installation Specialists",
+  "Industry-Standard Warranties",
+  "Professional Equipment and Facilities",
+  "Consultation and Custom Solutions",
+  "Transparent Pricing and Process"
+];
+
+// Service process overview
+const serviceProcess = {
+  consultation: "Initial vehicle assessment and service recommendation",
+  preparation: "Professional preparation and workspace setup",
+  execution: "Expert application using certified techniques",
+  inspection: "Quality control and final inspection",
+  delivery: "Service explanation and maintenance guidance"
+};
   // Handlers
   const handlePlayPause = useCallback(() => {
     if (videoRefs.current[currentSlide]) {
@@ -277,20 +310,33 @@ const Service = () => {
   // Render helpers
   const renderServiceCard = (icon, title, description, customIcon = null) => (
     <div 
-      className="cursor-pointer bg-white/90 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 text-center" 
+      className="group cursor-pointer bg-gradient-to-br from-white via-gray-50 to-white/80 backdrop-blur-lg rounded-2xl shadow-xl shadow-gray-300/30 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 p-6 sm:p-8 text-center transform hover:-translate-y-3 hover:scale-105 relative overflow-hidden border border-white/50" 
       onClick={() => openModal(title)}
     >
-      <div className="mb-4 flex justify-center">
-        <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center">
-          {customIcon || <FontAwesomeIcon icon={icon} className="text-white text-2xl" />}
-        </div>
-      </div>
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-teal-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       
-      <div className="text-center">
-        <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
-        <p className="text-sm text-gray-600">{description}</p>
-        <div className="mt-3 text-teal-500 hover:text-teal-600 transition-colors">
-          <span className="text-sm">View Details →</span>
+      {/* Sparkle effects */}
+      <div className="absolute top-4 right-4 w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
+      <div className="absolute bottom-8 left-6 w-1 h-1 bg-teal-500 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
+      <div className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-500"></div>
+      
+      <div className="relative z-10">
+        <div className="mb-6 flex justify-center">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-blue-500 to-teal-600 flex items-center justify-center shadow-xl shadow-blue-500/30 group-hover:shadow-2xl group-hover:shadow-teal-500/40 transform group-hover:rotate-12 transition-all duration-500 relative overflow-hidden">
+            {/* Icon glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            {customIcon || <FontAwesomeIcon icon={icon} className="text-white text-2xl sm:text-3xl z-10 relative group-hover:scale-110 transition-transform duration-300" />}
+          </div>
+        </div>
+        
+        <div className="text-center">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{title}</h3>
+          <p className="text-sm sm:text-base text-gray-600 mb-4 leading-relaxed">{description}</p>
+          <div className="flex items-center justify-center text-teal-500 hover:text-teal-600 transition-colors group-hover:scale-110 group-hover:font-semibold">
+            <span className="text-sm sm:text-base mr-2">View Details</span>
+            <FontAwesomeIcon icon={faArrowRight} className="transform group-hover:translate-x-2 transition-transform duration-300" />
+          </div>
         </div>
       </div>
     </div>
@@ -298,37 +344,39 @@ const Service = () => {
 
   // Sparkle Card Component for "YOUR VEHICLE DESERVES THE BEST" section
   const renderSparkleCard = (id, icon, title, description) => (
-    <div className="sparkle-card h-64 sm:h-72 md:h-80 lg:h-96 group relative">
-      <div className="sparkle-card-inner absolute w-full h-full">
+    <div className="group h-64 sm:h-72 md:h-80 lg:h-96 relative perspective-1000">
+      <div className="relative w-full h-full transform-gpu transition-all duration-700 group-hover:rotate-y-12 group-hover:-translate-y-4 group-hover:scale-105">
         {/* Card Content */}
-        <div className="absolute w-full h-full rounded-xl overflow-hidden shadow-lg">
-          {/* Background with gradient overlay */}
-          <div className="w-full h-full bg-gradient-to-br from-blue-600/90 to-teal-500/90 relative overflow-hidden">
-            {/* Sparkle elements */}
-            <div className="sparkle sparkle-1"></div>
-            <div className="sparkle sparkle-2"></div>
-            <div className="sparkle sparkle-3"></div>
-            <div className="sparkle sparkle-4"></div>
-            <div className="sparkle sparkle-5"></div>
+        <div className="absolute w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/50 group-hover:shadow-3xl group-hover:shadow-blue-500/50">
+          {/* Background with animated gradient overlay */}
+          <div className="w-full h-full bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 relative overflow-hidden">
+            {/* Animated mesh background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-transparent to-teal-500/30 animate-pulse"></div>
+            
+            {/* Floating sparkle elements */}
+            <div className="absolute top-4 right-4 w-3 h-3 bg-white/80 rounded-full opacity-60 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-100"></div>
+            <div className="absolute bottom-8 left-6 w-2 h-2 bg-teal-300/80 rounded-full opacity-50 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-300"></div>
+            <div className="absolute top-1/3 right-8 w-2.5 h-2.5 bg-blue-300/80 rounded-full opacity-40 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-500"></div>
+            <div className="absolute bottom-1/3 left-4 w-1.5 h-1.5 bg-white/70 rounded-full opacity-50 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-700"></div>
             
             {/* Shine effect */}
-            <div className="card-shine"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 skew-x-12"></div>
             
             {/* Glow border */}
-            <div className="card-glow-border"></div>
+            <div className="absolute inset-0 rounded-2xl border-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             {/* Content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 z-10">
-              <div className="icon-wrapper h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-full bg-white/20 flex items-center justify-center mb-3 sm:mb-4 backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
-                <FontAwesomeIcon icon={icon} className="text-xl sm:text-2xl text-white group-hover:scale-110 transition-transform duration-700" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8 z-10">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-4 sm:mb-6 shadow-xl shadow-black/30 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 border border-white/30">
+                <FontAwesomeIcon icon={icon} className="text-2xl sm:text-3xl md:text-4xl text-white group-hover:scale-110 transition-transform duration-700" />
               </div>
               
-              <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:scale-105 transition-transform duration-500">{title}</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-500 text-center drop-shadow-lg">{title}</h3>
               
-              <p className="text-xs sm:text-sm text-white/90 text-center max-w-xs px-2 md:px-4 group-hover:opacity-100 transition-all duration-500">{description}</p>
+              <p className="text-sm sm:text-base text-white/90 text-center max-w-xs px-2 md:px-4 leading-relaxed group-hover:opacity-100 transition-all duration-500 drop-shadow-md">{description}</p>
               
-              <div className="mt-3 md:mt-4 scale-0 group-hover:scale-100 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                <span className="inline-block px-2 py-1 sm:px-3 sm:py-1 bg-white/20 rounded-full text-white text-xs backdrop-blur-sm">
+              <div className="mt-4 md:mt-6 scale-0 group-hover:scale-100 transition-all duration-500 opacity-0 group-hover:opacity-100">
+                <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs sm:text-sm border border-white/30 shadow-lg">
                   Premium Service
                 </span>
               </div>
@@ -356,41 +404,50 @@ const Service = () => {
     }
     
     return (
-      <div className="flip-card h-64 sm:h-72 md:h-80 lg:h-96 group relative perspective-1000">
-        <div className="flip-card-inner relative w-full h-full transition-transform duration-700 preserve-3d group-hover:rotate-y-180">
+      <div className="h-64 sm:h-72 md:h-80 lg:h-96 group relative" style={{ perspective: '1000px' }}>
+        <div className="relative w-full h-full transition-transform duration-700 transform-gpu group-hover:rotate-y-180" style={{ transformStyle: 'preserve-3d' }}>
           {/* Front Side */}
-          <div className="flip-card-front absolute w-full h-full backface-hidden bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+          <div className="absolute w-full h-full rounded-2xl shadow-2xl shadow-gray-900/50 overflow-hidden" style={{ backfaceVisibility: 'hidden' }}>
             <div
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${blogBanner})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-teal-500/80 flex flex-col justify-end p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">{frontTitle}</h3>
-                <div className="flex items-center text-white text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="mr-2">Flip to learn more</span>
-                  <FontAwesomeIcon icon={faArrowRight} className="ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/90 via-blue-700/80 to-teal-600/90 flex flex-col justify-end p-6 sm:p-8">
+                {/* Decorative elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 border-2 border-white/30 rounded-full flex items-center justify-center">
+                  <div className="w-6 h-6 bg-white/20 rounded-full animate-pulse"></div>
+                </div>
+                
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg">{frontTitle}</h3>
+                <div className="flex items-center text-white text-sm sm:text-base opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                  <span className="mr-3 font-medium">Flip to learn more</span>
+                  <FontAwesomeIcon icon={faArrowRight} className="group-hover:translate-x-2 transition-transform duration-300" />
                 </div>
               </div>
             </div>
           </div>
           
           {/* Back Side */}
-          <div className="flip-card-back absolute w-full h-full backface-hidden rounded-xl shadow-lg overflow-hidden rotate-y-180">
-            <div className="w-full h-full bg-gradient-to-br from-teal-600 to-blue-700 p-4 sm:p-6 md:p-8">
-              <div className="flex flex-col h-full justify-center items-center text-center">
-                <div className="mb-3 sm:mb-4 md:mb-6">
+          <div className="absolute w-full h-full rounded-2xl shadow-2xl shadow-gray-900/50 overflow-hidden transform rotate-y-180" style={{ backfaceVisibility: 'hidden' }}>
+            <div className="w-full h-full bg-gradient-to-br from-teal-600 via-blue-700 to-purple-700 p-6 sm:p-8 relative overflow-hidden">
+              {/* Animated background elements */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16 animate-pulse"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-teal-400/20 rounded-full translate-y-12 -translate-x-12 animate-pulse delay-300"></div>
+              
+              <div className="flex flex-col h-full justify-center items-center text-center relative z-10">
+                <div className="mb-4 sm:mb-6 md:mb-8">
                   {backIconComponent || (
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm mx-auto">
-                      <FontAwesomeIcon icon={backIcon} className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white" />
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mx-auto shadow-2xl shadow-black/40 border border-white/30">
+                      <FontAwesomeIcon icon={backIcon} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white" />
                     </div>
                   )}
                 </div>
                 
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">{backTitle}</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg">{backTitle}</h3>
                 
-                <p className="text-xs sm:text-sm md:text-base text-white/90 max-w-xs">{backContent}</p>
+                <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-xs leading-relaxed drop-shadow-md">{backContent}</p>
                 
-                <div className="mt-3 sm:mt-4 md:mt-6 w-8 sm:w-10 md:w-12 h-0.5 bg-white/30 rounded-full"></div>
+                <div className="mt-4 sm:mt-6 md:mt-8 w-12 sm:w-16 md:w-20 h-1 bg-gradient-to-r from-white/50 to-white/20 rounded-full shadow-lg"></div>
               </div>
             </div>
           </div>
@@ -405,11 +462,11 @@ const Service = () => {
     
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
         
         <div 
           ref={modalRef}
-          className="relative bg-white rounded-xl shadow-2xl max-w-2xl w-full mx-auto overflow-hidden transform transition-all duration-500 opacity-100 scale-100"
+          className="relative bg-white rounded-2xl shadow-3xl max-w-2xl w-full mx-auto overflow-hidden transform transition-all duration-500 opacity-100 scale-100 border border-gray-200"
           style={{maxHeight: '90vh'}}
         >
           {/* Modal header with image */}
@@ -419,55 +476,58 @@ const Service = () => {
               alt={selectedService.title} 
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
             
             {/* Close button */}
             <button 
               onClick={closeModal} 
-              className="absolute top-4 right-4 w-8 h-8 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300"
+              className="absolute top-4 right-4 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center backdrop-blur-md transition-all duration-300 border border-white/30 shadow-lg hover:scale-110"
               aria-label="Close modal"
             >
-              <FontAwesomeIcon icon={faTimes} className="text-white text-sm sm:text-base" />
+              <FontAwesomeIcon icon={faTimes} className="text-white text-lg sm:text-xl" />
             </button>
             
             {/* Title overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">{selectedService.title}</h2>
-              <p className="mt-1 text-sm sm:text-base opacity-90">{selectedService.shortDescription}</p>
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">{selectedService.title}</h2>
+              <p className="text-base sm:text-lg opacity-90 drop-shadow-md">{selectedService.shortDescription}</p>
             </div>
           </div>
           
           {/* Modal content */}
-          <div className="p-4 sm:p-6 max-h-64 sm:max-h-80 md:max-h-96 overflow-y-auto">
-            <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">{selectedService.fullDescription}</p>
+          <div className="p-6 sm:p-8 max-h-64 sm:max-h-80 md:max-h-96 overflow-y-auto">
+            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">{selectedService.fullDescription}</p>
             
-            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-800">Features</h3>
-            <ul className="mb-4 sm:mb-6 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800 flex items-center">
+              <div className="w-6 h-6 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full mr-3"></div>
+              Features
+            </h3>
+            <ul className="mb-6 sm:mb-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {selectedService.features.map((feature, index) => (
-                <li key={index} className="flex items-start">
-                  <FontAwesomeIcon icon={faCheck} className="text-teal-500 mt-1 mr-2 text-sm sm:text-base" />
-                  <span className="text-sm sm:text-base text-gray-700">{feature}</span>
+                <li key={index} className="flex items-start p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
+                  <FontAwesomeIcon icon={faCheck} className="text-teal-500 mt-1 mr-3 text-lg flex-shrink-0" />
+                  <span className="text-base sm:text-lg text-gray-700">{feature}</span>
                 </li>
               ))}
             </ul>
             
-            <div className="bg-gradient-to-r from-gray-100 to-gray-200 p-3 sm:p-4 rounded-lg mb-4 sm:mb-6">
+            <div className="bg-gradient-to-r from-blue-50 to-teal-50 p-4 sm:p-6 rounded-2xl mb-6 sm:mb-8 border border-blue-100">
               <div className="flex justify-between items-center">
-                <span className="text-sm sm:text-base text-gray-700 font-medium">Price</span>
-                <span className="text-lg sm:text-xl font-bold text-gray-800">{selectedService.price}</span>
+                <span className="text-base sm:text-lg text-gray-700 font-semibold">Starting Price</span>
+                <span className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">{selectedService.price}</span>
               </div>
             </div>
           </div>
           
           {/* Modal footer */}
-          <div className="border-t border-gray-200 p-3 sm:p-4 bg-gray-50 flex justify-between items-center">
+          <div className="border-t border-gray-200 p-4 sm:p-6 bg-gradient-to-r from-gray-50 to-gray-100 flex justify-between items-center">
             <button 
               onClick={closeModal} 
-              className="px-3 py-1.5 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-sm sm:text-base text-gray-700 hover:bg-gray-100 transition-colors"
+              className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-gray-300 rounded-xl text-base sm:text-lg text-gray-700 hover:bg-gray-100 hover:border-gray-400 transition-all duration-300 font-medium"
             >
               Close
             </button>
-            <button className="px-4 py-1.5 sm:px-6 sm:py-2 bg-gradient-to-r from-teal-500 to-blue-600 text-sm sm:text-base text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+            <button className="px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-base sm:text-lg text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 font-semibold">
               Book Service
             </button>
           </div>
@@ -480,7 +540,7 @@ const Service = () => {
     <>
       {/* CHOOSE YOUR SERVICE Section */}
       <div
-        className="py-8 md:py-12 lg:py-16 relative overflow-hidden"
+        className="py-12 md:py-20 lg:py-28 relative overflow-hidden"
         style={{
           backgroundImage: `url(${car6})`,
           backgroundSize: 'cover',
@@ -488,16 +548,24 @@ const Service = () => {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 relative">
-            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-blue-600">
-              CHOOSE YOUR SERVICE
-            </span>
-            <span className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-28 lg:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full"></span>
-          </h2>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70 backdrop-blur-sm"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-24">
+            <div className="inline-block mb-4 px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+              <span className="text-white/90 text-sm sm:text-base font-medium tracking-wide">PREMIUM SERVICES</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 relative">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-400 to-blue-600 drop-shadow-2xl">
+                CHOOSE YOUR SERVICE
+              </span>
+              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-teal-500 to-blue-500 rounded-full shadow-xl shadow-blue-500/50"></div>
+            </h2>
+            <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Transform your vehicle with our premium detailing services
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
             {renderServiceCard(faCar, "Auto Detailing", "Complete interior and exterior detailing services")}
 
             {renderServiceCard(faSprayCan, "Paint Correction", "Professional polishing services")}
@@ -506,13 +574,13 @@ const Service = () => {
 
             {renderServiceCard(null, "Ceramic Coating", "Long-lasting protection",
               <div className="flex items-center justify-center">
-                <img src={wash1} alt="Ceramic Coating" className="w-8 h-8 object-contain" />
+                <img src={wash1} alt="Ceramic Coating" className="w-10 h-10 object-contain" />
               </div>
             )}
 
             {renderServiceCard(null, "Paint Protection", "Film installation",
               <div className="flex items-center justify-center">
-                <img src={wash2} alt="Paint Protection Film" className="w-8 h-8 object-contain" />
+                <img src={wash2} alt="Paint Protection Film" className="w-10 h-10 object-contain" />
               </div>
             )}
           </div>
@@ -521,7 +589,7 @@ const Service = () => {
 
       {/* FREE PAINT EVALUATION Banner */}
       <div
-        className="relative py-8 md:py-12 lg:py-16 text-white overflow-hidden"
+        className="relative py-16 md:py-24 lg:py-32 text-white overflow-hidden"
         style={{
           backgroundImage: `url(${car2})`,
           backgroundSize: 'cover',
@@ -529,39 +597,61 @@ const Service = () => {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <div className="inline-block mb-3 sm:mb-4 px-3 py-1 sm:px-4 sm:py-1 bg-white/20 rounded-full backdrop-blur-sm">
-            <span className="text-xs sm:text-sm font-medium">CURRENT PROMOTION</span>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-black/70 to-teal-900/80 backdrop-blur-sm"></div>
+        
+        {/* Animated background elements */}
+        <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500/20 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-teal-500/20 rounded-full animate-pulse delay-300"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full animate-bounce delay-500"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-block mb-6 sm:mb-8 px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-white/20 to-white/10 rounded-full backdrop-blur-md border border-white/30 shadow-xl">
+            <span className="text-base sm:text-lg font-bold tracking-wider text-yellow-300">🎉 LIMITED TIME OFFER</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 sm:mb-5 lg:mb-6">
-            FREE PAINT EVALUATION AND ESTIMATE
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-6 sm:mb-8 lg:mb-10">
+            <span className="block text-white drop-shadow-2xl">FREE PAINT EVALUATION</span>
+            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 drop-shadow-2xl">
+              & ESTIMATE
+            </span>
           </h2>
-          <button className="px-6 py-2 sm:px-8 sm:py-3 bg-white text-teal-700 text-sm sm:text-base font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-md sm:shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 sm:hover:-translate-y-1">
-            Claim Your Free Evaluation
+          <p className="text-xl sm:text-2xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+            Professional assessment of your vehicle's paint condition - absolutely free!
+          </p>
+          <button className="group relative px-10 py-4 sm:px-12 sm:py-6 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 text-white text-lg sm:text-xl font-bold rounded-2xl transition-all duration-300 shadow-2xl shadow-orange-500/50 hover:shadow-3xl hover:shadow-orange-500/70 transform hover:-translate-y-2 hover:scale-105 overflow-hidden">
+            <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="relative z-10">Claim Your Free Evaluation</span>
           </button>
         </div>
       </div>
 
-      {/* PERFECT SOLUTIONS FOR ALL VEHICLES Section - Added right after FREE PAINT EVALUATION */}
-      <div className="py-8 md:py-12 lg:py-16 relative overflow-hidden"
+      {/* PERFECT SOLUTIONS FOR ALL VEHICLES Section */}
+      <div className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
            style={{
              backgroundImage: `url(${car6})`,
              backgroundSize: 'cover',
              backgroundPosition: 'center',
              backgroundAttachment: 'fixed'
            }}>
-        <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 relative">
-            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">
-              PERFECT SOLUTIONS FOR ALL VEHICLES
-            </span>
-            <span className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-28 lg:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full"></span>
-          </h2>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-blue-900/80 backdrop-blur-sm"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-24">
+            <div className="inline-block mb-4 px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+              <span className="text-white/90 text-sm sm:text-base font-medium tracking-wide">SHOWCASE</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 relative">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-400 to-blue-600 drop-shadow-2xl">
+                PERFECT SOLUTIONS
+              </span>
+              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-teal-500 to-blue-500 rounded-full shadow-xl shadow-blue-500/50"></div>
+            </h2>
+            <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              FOR ALL VEHICLES
+            </p>
+          </div>
 
           {/* Video Slider */}
-          <div className="relative max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden">
+          <div className="relative max-w-6xl mx-auto rounded-3xl shadow-3xl shadow-black/50 overflow-hidden border-4 border-white/20">
             <div className="relative aspect-video">
               {videos.map((video, index) => (
                 <div
@@ -576,61 +666,41 @@ const Service = () => {
                     loop
                     playsInline
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 sm:p-6 md:p-8">
-                    <div>
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">{video.title}</h3>
-                      <p className="text-white/80 text-sm sm:text-base">{video.description}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 flex items-end p-6 sm:p-8 md:p-10">
+                    <div className="w-full">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">{video.title}</h3>
+                      <p className="text-white/90 text-lg sm:text-xl drop-shadow-md">{video.description}</p>
                     </div>
                   </div>
-                  <button
-                    onClick={handlePlayPause}
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all duration-300"
-                    aria-label={isPlaying && currentSlide === index ? "Pause video" : "Play video"}
-                  >
-                    <span className="text-white text-xs">
-                      {isPlaying && currentSlide === index ? 'PAUSE' : 'PLAY'}
-                    </span>
-                  </button>
+
                 </div>
               ))}
             </div>
 
             {/* Navigation buttons */}
             <button
-              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/90 text-gray-800 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 shadow-md sm:shadow-lg z-20 hover:scale-105 sm:hover:scale-110"
+              className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:shadow-2xl z-20 hover:scale-110 border-2 border-white/50"
               onClick={prevSlide}
               aria-label="Previous video"
             >
-              &#10094;
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold">‹</span>
             </button>
             <button
-              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/90 text-gray-800 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 shadow-md sm:shadow-lg z-20 hover:scale-105 sm:hover:scale-110"
+              className="absolute right-4 sm:right-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:shadow-2xl z-20 hover:scale-110 border-2 border-white/50"
               onClick={nextSlide}
               aria-label="Next video"
             >
-              &#10095;
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold">›</span>
             </button>
 
-            {/* Indicator dots */}
-            <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2 z-20">
-              {videos.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index ? 'bg-teal-500 w-4 sm:w-6' : 'bg-gray-300'
-                  }`}
-                  onClick={() => goToSlide(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
+
           </div>
         </div>
       </div>
       
       {/* QUALITY SERVICE Section */}
       <div
-        className="py-8 md:py-12 lg:py-16 text-white relative overflow-hidden"
+        className="py-16 md:py-24 lg:py-32 text-white relative overflow-hidden"
         style={{
           backgroundImage: `url(${car2})`,
           backgroundSize: 'cover',
@@ -638,43 +708,73 @@ const Service = () => {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 lg:mb-16 tracking-wider">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-black/80 to-teal-900/90 backdrop-blur-sm"></div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-20 left-20 w-24 h-24 bg-blue-500/20 rounded-full animate-float"></div>
+        <div className="absolute bottom-32 right-32 w-32 h-32 bg-teal-500/20 rounded-full animate-float delay-1000"></div>
+        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-white/10 rounded-full animate-float delay-2000"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-block mb-6 sm:mb-8 px-8 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+            <span className="text-white/90 text-sm sm:text-base font-medium tracking-wide">EXCELLENCE</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-12 sm:mb-16 lg:mb-20 tracking-wider">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-teal-200 drop-shadow-2xl">
               QUALITY SERVICE
             </span>
           </h2>
           
           {/* Service Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12 md:mt-16">
-            <div className="bg-blue-600 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-blue-400 transition-all duration-300 group relative">
-              <div className="mb-2 sm:mb-3 md:mb-4">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">Professional Detailing</h3>
-              </div>
-              <p className="text-white text-xs sm:text-sm md:text-base">Our certified technicians use only premium products and techniques to restore your vehicle's finish.</p>
-              <div className="absolute inset-0 bg-blue-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg sm:rounded-xl">
-                <span className="text-white font-bold text-lg">DETAILING SERVICE</span>
-              </div>
-            </div>
-
-            <div className="bg-blue-600 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-blue-400 transition-all duration-300 group relative">
-              <div className="mb-2 sm:mb-3 md:mb-4">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">Paint Protection</h3>
-              </div>
-              <p className="text-white text-xs sm:text-sm md:text-base">Advanced ceramic coatings and paint protection films to preserve your vehicle's exterior.</p>
-              <div className="absolute inset-0 bg-blue-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg sm:rounded-xl">
-                <span className="text-white font-bold text-lg">PROTECTION SERVICE</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mt-12 sm:mt-16 md:mt-20">
+            <div className="group relative bg-gradient-to-br from-blue-600/80 to-blue-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-blue-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
+              {/* Background animation */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <div className="relative z-10">
+                <div className="mb-6 sm:mb-8">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faCar} className="text-2xl sm:text-3xl text-white" />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Professional Detailing</h3>
+                </div>
+                <p className="text-white/90 text-base sm:text-lg leading-relaxed">Our certified technicians use only premium products and techniques to restore your vehicle's finish.</p>
               </div>
             </div>
 
-            <div className="bg-blue-600 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl backdrop-blur-sm border border-blue-400 transition-all duration-300 group relative">
-              <div className="mb-2 sm:mb-3 md:mb-4">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">Premium Results</h3>
+            <div className="group relative bg-gradient-to-br from-teal-600/80 to-teal-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-teal-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/50 overflow-hidden">
+              {/* Background animation */}
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <div className="relative z-10">
+                <div className="mb-6 sm:mb-8">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faShield} className="text-2xl sm:text-3xl text-white" />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Paint Protection</h3>
+                </div>
+                <p className="text-white/90 text-base sm:text-lg leading-relaxed">Advanced ceramic coatings and paint protection films to preserve your vehicle's exterior.</p>
               </div>
-              <p className="text-white text-xs sm:text-sm md:text-base">See the difference with our award-winning detailing services that leave your vehicle looking showroom-new.</p>
-              <div className="absolute inset-0 bg-blue-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg sm:rounded-xl">
-                <span className="text-white font-bold text-lg">PREMIUM SERVICE</span>
+            </div>
+
+            <div className="group relative bg-gradient-to-br from-purple-600/80 to-purple-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-purple-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 overflow-hidden">
+              {/* Background animation */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <div className="relative z-10">
+                <div className="mb-6 sm:mb-8">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faTrophy} className="text-2xl sm:text-3xl text-white" />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Premium Results</h3>
+                </div>
+                <p className="text-white/90 text-base sm:text-lg leading-relaxed">See the difference with our award-winning detailing services that leave your vehicle looking showroom-new.</p>
               </div>
             </div>
           </div>
@@ -683,7 +783,7 @@ const Service = () => {
 
       {/* YOUR VEHICLE DESERVES THE BEST Section - Sparkle Cards */}
       <div
-        className="py-8 md:py-12 lg:py-16 relative"
+        className="py-16 md:py-24 lg:py-32 relative"
         style={{
           backgroundImage: `url(${car5})`,
           backgroundSize: 'cover',
@@ -691,16 +791,24 @@ const Service = () => {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 relative">
-            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">
-              YOUR VEHICLE DESERVES THE BEST
-            </span>
-            <span className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-28 lg:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full"></span>
-          </h2>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-gray-900/70 to-black/80 backdrop-blur-sm"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-24">
+            <div className="inline-block mb-4 px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+              <span className="text-white/90 text-sm sm:text-base font-medium tracking-wide">PREMIUM QUALITY</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 relative">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-400 to-blue-600 drop-shadow-2xl">
+                YOUR VEHICLE DESERVES
+              </span>
+              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-teal-500 to-blue-500 rounded-full shadow-xl shadow-blue-500/50"></div>
+            </h2>
+            <p className="text-3xl sm:text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 drop-shadow-2xl">
+              THE BEST
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
             {renderSparkleCard(
               'card1',
               faShield,
@@ -734,7 +842,7 @@ const Service = () => {
 
       {/* WHY CHOOSE ACTION CAR DETAILING Section - Flip Cards */}
       <div
-        className="py-8 md:py-12 lg:py-16 relative"
+        className="py-16 md:py-24 lg:py-32 relative"
         style={{
           backgroundImage: `url(${car6})`,
           backgroundSize: 'cover',
@@ -742,16 +850,21 @@ const Service = () => {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 relative">
-            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">
-              WHY CHOOSE ACTION CAR DETAILING
-            </span>
-            <span className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-28 lg:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full"></span>
-          </h2>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-gray-900/70 to-black/80 backdrop-blur-sm"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-24">
+            <div className="inline-block mb-4 px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+              <span className="text-white/90 text-sm sm:text-base font-medium tracking-wide">WHY CHOOSE US</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 relative">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-400 to-blue-600 drop-shadow-2xl">
+                ACTION CAR DETAILING
+              </span>
+              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-teal-500 to-blue-500 rounded-full shadow-xl shadow-blue-500/50"></div>
+            </h2>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
             {renderFlipCard(
               'card5',
               'Reputable Since 2011',
@@ -772,8 +885,8 @@ const Service = () => {
               'card7',
               'Award Winning',
               (
-                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm mx-auto">
-                  <img src={awardLogo} alt="Award" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 object-contain" />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mx-auto shadow-2xl shadow-black/40 border border-white/30">
+                  <img src={awardLogo} alt="Award" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain" />
                 </div>
               ),
               'Award Winning',
@@ -794,236 +907,27 @@ const Service = () => {
       {/* Service Modal */}
       <ServiceModal />
 
-      {/* Add custom styles */}
-      <style jsx global>{`
-        /* Modal animations */
-        @keyframes modalFadeIn {
-          0% { opacity: 0; transform: scale(0.95); }
-          100% { opacity: 1; transform: scale(1); }
+      {/* Custom Tailwind animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
         }
         
-        @keyframes modalFadeOut {
-          0% { opacity: 1; transform: scale(1); }
-          100% { opacity: 0; transform: scale(0.95); }
-        }
-        
-        /* Navbar styles for transparency when scrolled */
-        .header-transparent {
-          background-color: transparent;
-          transition: background-color 0.3s ease;
-        }
-        
-        .header-solid {
-          background-color: rgba(0, 0, 0, 0.9);
-          transition: background-color 0.3s ease;
-        }
-        
-        /* Sparkle Card Animations */
-        .sparkle-card {
-          isolation: isolate;
-        }
-        
-        .sparkle-card-inner {
-          transition: transform 0.6s cubic-bezier(0.2, 0.85, 0.4, 1);
-        }
-        
-        .sparkle-card:hover .sparkle-card-inner {
-          transform: translateY(-8px) scale(1.02);
-        }
-        
-        /* Card shine effect */
-        .card-shine {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.2) 50%,
-            rgba(255, 255, 255, 0) 100%
-          );
-          transform: translateX(-100%);
-          transition: transform 1.5s ease;
-          pointer-events: none;
-          z-index: 2;
-        }
-        
-        .sparkle-card:hover .card-shine {
-          transform: translateX(100%);
-        }
-        
-        /* Glow border */
-        .card-glow-border {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          opacity: 0;
-          border-radius: inherit;
-          border: 2px solid rgba(255, 255, 255, 0.5);
-          transition: opacity 0.5s ease;
-          z-index: 2;
-        }
-        
-        .sparkle-card:hover .card-glow-border {
-          opacity: 1;
-        }
-        
-        /* Sparkle animations */
-        .sparkle {
-          position: absolute;
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background-color: white;
-          opacity: 0;
-          filter: blur(1px);
-          z-index: 2;
-          pointer-events: none;
-          transform: scale(0);
-        }
-        
-        @keyframes sparkleAnimation {
-          0% { opacity: 0; transform: scale(0) translate(0, 0); }
-          50% { opacity: 1; transform: scale(1) translate(var(--tx), var(--ty)); }
-          100% { opacity: 0; transform: scale(0) translate(calc(var(--tx) * 2), calc(var(--ty) * 2)); }
-        }
-        
-        .sparkle-card:hover .sparkle {
-          animation: sparkleAnimation 1.5s ease-in-out infinite;
-        }
-        
-        .sparkle-1 {
-          --tx: 20px;
-          --ty: -30px;
-          top: 20%;
-          left: 30%;
-          animation-delay: 0.1s !important;
-        }
-        
-        .sparkle-2 {
-          --tx: -25px;
-          --ty: -20px;
-          top: 60%;
-          left: 65%;
-          width: 4px;
-          height: 4px;
-          animation-delay: 0.3s !important;
-        }
-        
-        .sparkle-3 {
-          --tx: 30px;
-          --ty: 20px;
-          top: 40%;
-          left: 25%;
-          width: 5px;
-          height: 5px;
-          animation-delay: 0.5s !important;
-        }
-        
-        .sparkle-4 {
-          --tx: -15px;
-          --ty: 30px;
-          top: 25%;
-          left: 70%;
-          width: 7px;
-          height: 7px;
-          animation-delay: 0.7s !important;
-        }
-        
-        .sparkle-5 {
-          --tx: 20px;
-          --ty: -20px;
-          top: 80%;
-          left: 40%;
-          width: 5px;
-          height: 5px;
-          animation-delay: 0.9s !important;
-        }
-        
-        /* Adding a subtle background animation for the cards */
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        
-        .sparkle-card-inner > div {
-          background-size: 200% 200%;
-          animation: gradientShift 5s ease infinite;
-        }
-        
-        /* Shadow effect */
-        .sparkle-card::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: -20px;
-          height: 30px;
-          background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 70%);
-          border-radius: 50%;
-          opacity: 0.5;
-          transform: scaleX(0.7);
-          filter: blur(5px);
-          transition: transform 0.6s cubic-bezier(0.2, 0.85, 0.4, 1), opacity 0.6s ease;
-          z-index: -1;
-        }
-        
-        .sparkle-card:hover::after {
-          transform: scaleX(0.85);
-          opacity: 0.8;
-        }
-        
-        /* Flip Card Styles */
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        
-        .preserve-3d {
-          transform-style: preserve-3d;
-        }
-        
-        .backface-hidden {
-          backface-visibility: hidden;
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
         }
         
         .rotate-y-180 {
           transform: rotateY(180deg);
         }
-
-        /* Media queries for better mobile responsiveness */
-        @media (max-width: 640px) {
-          .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          
-          h2 {
-            font-size: 1.75rem;
-          }
-          
-          .grid {
-            gap: 1rem;
-          }
+        
+        .rotate-y-12 {
+          transform: rotateY(12deg);
         }
         
-        /* Ensure videos are responsive on all devices */
-        video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-        
-        /* Improve tap targets on mobile */
-        @media (max-width: 480px) {
-          button {
-            min-height: 44px;
-            min-width: 44px;
-          }
+        .shadow-3xl {
+          box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
         }
       `}</style>
     </>

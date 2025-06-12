@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import actionCarLogo from '../assets/images/action car logo.png';
 import awardLogo from '../assets/images/award png.png';
 
-const Navbar = () => {
+const Navbar = ({ currentView, setCurrentView }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -14,6 +14,45 @@ const Navbar = () => {
 
   const toggleServicesDropdown = () => {
     setServicesDropdownOpen(!servicesDropdownOpen);
+  };
+
+  const handleNavClick = (view, href = null) => {
+    if (href) {
+      // Check if it's the auto-detailing service - navigate to the dedicated page
+      if (href === '#auto-detailing') {
+        setCurrentView('auto-detailing');
+      } else if (href === '#paint-correction') {
+        setCurrentView('paint-correction');
+      } else if (href === '#window-tinting') {
+        setCurrentView('window-tinting');
+      } else if (href === '#ceramic-coating') {
+        setCurrentView('ceramic-coatings');
+      } else if (href === '#remediation-claims') {
+        setCurrentView('remediation-claim');
+      } else if (href === '#paint-protection-film') {
+        setCurrentView('paint-protection-film');
+      } else if (href.startsWith('#') && currentView === 'home') {
+        // For other anchor links, scroll to section if we're on home page
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else if (href.startsWith('#')) {
+        // Switch to home first, then scroll
+        setCurrentView('home');
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    } else {
+      // For view changes
+      setCurrentView(view);
+    }
+    setIsMenuOpen(false);
+    setServicesDropdownOpen(false);
   };
 
   // Close dropdown when clicking outside
@@ -44,21 +83,21 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'HOME', href: '#' },
-    { name: 'ABOUT', href: '#' },
-    { name: 'GIFT CARD', href: '#' },
-    { name: 'SERVICES', href: '#', hasDropdown: true },
-    { name: 'BEFORE & AFTER', href: '#' },
-    { name: 'TESTIMONIALS', href: '#' },
-    { name: 'REFERENCES', href: '#' },
+    { name: 'HOME', view: 'home' },
+    { name: 'ABOUT', view: 'about' },
+    { name: 'GIFT CARD', view: 'giftcard' },
+    { name: 'SERVICES', href: '#services', hasDropdown: true },
+    { name: 'BEFORE & AFTER', href: '#before-after' },
+    { name: 'TESTIMONIALS', view: 'testimonials' },
+    { name: 'REFERENCES', view: 'references' },
   ];
 
   const serviceItems = [
-    { name: 'AUTO DETAILING', href: '#auto-detailing' },
-    { name: 'PAINT CORRECTION POLISHING', href: '#paint-correction' },
+    { name: 'AUTO DETAILING', href: '#auto-detailing' }, // This will now navigate to the dedicated page
+    { name: 'PAINT CORRECTION POLISHING', href: '#paint-correction' }, // This will now navigate to the dedicated page
     { name: 'WINDOW TINTING', href: '#window-tinting' },
-    { name: 'CERAMIC COATING', href: '#ceramic-coating' },
-    { name: 'PAINT PROTECTION FILM', href: '#paint-protection' },
+    { name: 'CERAMIC COATING', href: '#ceramic-coating' }, // This will now navigate to the ceramic coatings page
+    { name: 'PAINT PROTECTION FILM', href: '#paint-protection-film' }, // Updated to navigate to paint protection film page
     { name: 'REMEDIATION CLAIMS', href: '#remediation-claims' },
   ];
 
@@ -69,7 +108,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
             {/* Logo */}
-            <div className="flex-shrink-0 transform transition-transform hover:scale-105">
+            <div className="flex-shrink-0 transform transition-transform hover:scale-105 cursor-pointer" onClick={() => handleNavClick('home')}>
               <img 
                 className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto filter drop-shadow-lg" 
                 src={actionCarLogo} 
@@ -85,7 +124,9 @@ const Navbar = () => {
                   {link.hasDropdown ? (
                     <button
                       onClick={toggleServicesDropdown}
-                      className="mafia-nav-link flex items-center text-xs md:text-sm lg:text-base"
+                      className={`mafia-nav-link flex items-center text-xs md:text-sm lg:text-base ${
+                        currentView === 'services' || currentView === 'auto-detailing' || currentView === 'paint-correction' || currentView === 'window-tinting' || currentView === 'ceramic-coatings' || currentView === 'remediation-claim' || currentView === 'paint-protection-film' ? 'bg-blue-700' : ''
+                      }`}
                     >
                       <span>{link.name}</span>
                       <svg 
@@ -99,12 +140,14 @@ const Navbar = () => {
                       </svg>
                     </button>
                   ) : (
-                    <a
-                      href={link.href}
-                      className="mafia-nav-link text-xs md:text-sm lg:text-base"
+                    <button
+                      onClick={() => handleNavClick(link.view, link.href)}
+                      className={`mafia-nav-link text-xs md:text-sm lg:text-base ${
+                        currentView === link.view ? 'bg-blue-700' : ''
+                      }`}
                     >
                       <span>{link.name}</span>
-                    </a>
+                    </button>
                   )}
                   
                   {/* Services Dropdown */}
@@ -112,13 +155,21 @@ const Navbar = () => {
                     <div className="absolute mt-2 w-48 md:w-56 lg:w-64 bg-black rounded-md shadow-2xl overflow-hidden z-20 border border-blue-800">
                       <div className="py-1">
                         {serviceItems.map((service) => (
-                          <a
+                          <button
                             key={service.name}
-                            href={service.href}
-                            className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm text-gray-200 hover:bg-blue-800 hover:text-white transition-colors duration-200 border-l-4 border-transparent hover:border-white"
+                            onClick={() => handleNavClick(null, service.href)}
+                            className={`w-full text-left block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm text-gray-200 hover:bg-blue-800 hover:text-white transition-colors duration-200 border-l-4 border-transparent hover:border-white ${
+                              (service.href === '#auto-detailing' && currentView === 'auto-detailing') ||
+                              (service.href === '#paint-correction' && currentView === 'paint-correction') ||
+                              (service.href === '#window-tinting' && currentView === 'window-tinting') ||
+                              (service.href === '#ceramic-coating' && currentView === 'ceramic-coatings') ||
+                              (service.href === '#remediation-claims' && currentView === 'remediation-claim') ||
+                              (service.href === '#paint-protection-film' && currentView === 'paint-protection-film')
+                                ? 'bg-blue-800 border-white' : ''
+                            }`}
                           >
                             {service.name}
-                          </a>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -198,24 +249,34 @@ const Navbar = () => {
                     {servicesDropdownOpen && (
                       <div className="pl-4 space-y-1">
                         {serviceItems.map((service) => (
-                          <a
+                          <button
                             key={service.name}
-                            href={service.href}
-                            className="block px-3 py-2 rounded-md text-xs sm:text-sm font-medium text-gray-200 hover:text-white hover:bg-blue-800 border-l-2 border-blue-700"
+                            onClick={() => handleNavClick(null, service.href)}
+                            className={`w-full text-left block px-3 py-2 rounded-md text-xs sm:text-sm font-medium text-gray-200 hover:text-white hover:bg-blue-800 border-l-2 border-blue-700 ${
+                              (service.href === '#auto-detailing' && currentView === 'auto-detailing') ||
+                              (service.href === '#paint-correction' && currentView === 'paint-correction') ||
+                              (service.href === '#window-tinting' && currentView === 'window-tinting') ||
+                              (service.href === '#ceramic-coating' && currentView === 'ceramic-coatings') ||
+                              (service.href === '#remediation-claims' && currentView === 'remediation-claim') ||
+                              (service.href === '#paint-protection-film' && currentView === 'paint-protection-film')
+                                ? 'bg-blue-800' : ''
+                            }`}
                           >
                             {service.name}
-                          </a>
+                          </button>
                         ))}
                       </div>
                     )}
                   </>
                 ) : (
-                  <a
-                    href={link.href}
-                    className="block px-3 py-2 rounded-md text-sm sm:text-base font-medium text-white hover:text-blue-300 hover:bg-blue-900"
+                  <button
+                    onClick={() => handleNavClick(link.view, link.href)}
+                    className={`w-full text-left block px-3 py-2 rounded-md text-sm sm:text-base font-medium text-white hover:text-blue-300 hover:bg-blue-900 ${
+                      currentView === link.view ? 'bg-blue-800' : ''
+                    }`}
                   >
                     {link.name}
-                  </a>
+                  </button>
                 )}
               </div>
             ))}
@@ -254,6 +315,8 @@ const Navbar = () => {
           margin: 0 0.1rem;
           transition: all 0.3s ease;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          border: none;
+          cursor: pointer;
         }
 
         @media (min-width: 768px) {

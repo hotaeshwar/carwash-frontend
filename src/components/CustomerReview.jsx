@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Star, MessageCircle } from 'lucide-react';
-import blogBanner from '../assets/images/blog-banner.jpg';
+import car4 from '../assets/images/car4.jpg';
 
 const CustomerReview = () => {
   const [visibleReviews, setVisibleReviews] = useState(6);
@@ -84,7 +84,7 @@ const CustomerReview = () => {
       id="customer-reviews" 
       className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8"
       style={{
-        backgroundImage: `url(${blogBanner})`,
+        backgroundImage: `url(${car4})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',

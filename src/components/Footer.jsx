@@ -73,7 +73,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="mt-6 sm:mt-8 md:mt-10 pt-4 sm:pt-6 border-t border-teal-700 text-center">
             <p className="text-sm sm:text-base">© {new Date().getFullYear()} Action Car Detailing. All Rights Reserved.</p>
-            <p className="text-xs sm:text-sm mt-1 sm:mt-2">Website Design by BreezeMaxWeb</p>
+            <p className="text-xs sm:text-sm mt-1 sm:mt-2">Website Design by Building india digital</p>
           </div>
         </div>
       </div>
