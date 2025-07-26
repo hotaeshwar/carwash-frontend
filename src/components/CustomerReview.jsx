@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Star, MessageCircle } from 'lucide-react';
-import car4 from '../assets/images/car4.jpg';
 
 const CustomerReview = () => {
   const [visibleReviews, setVisibleReviews] = useState(6);
@@ -82,31 +81,26 @@ const CustomerReview = () => {
   return (
     <section 
       id="customer-reviews" 
-      className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 relative overflow-hidden"
+      className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 relative overflow-hidden bg-white"
     >
-      {/* Blurred background */}
-      <div 
-        className="absolute inset-0 -z-10"
-        style={{
-          backgroundImage: `url(${car4})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          filter: 'blur(15px)',
-          transform: 'scale(1.1)'
-        }}
-      ></div>
-      
       <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold text-center mb-6 sm:mb-8 text-white">
-          Customer Reviews
-        </h2>
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-block mb-4 px-6 py-2 bg-blue-100/60 backdrop-blur-md rounded-full border border-blue-200/50">
+            <span className="text-blue-800 text-sm sm:text-base font-medium tracking-wide">TESTIMONIALS</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 relative">
+            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+              Customer Reviews
+            </span>
+            <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-24 sm:w-32 lg:w-40 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full shadow-xl shadow-blue-500/50"></div>
+          </h2>
+        </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {reviews.slice(0, visibleReviews).map((review, index) => (
             <div 
               key={index} 
-              className="backdrop-blur-sm bg-white/30 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-gradient-to-br from-blue-500/90 to-blue-700/90 rounded-xl shadow-lg backdrop-blur-sm overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/50"
             >
               <div className="p-4 sm:p-5 md:p-6">
                 <div className="flex justify-between items-center mb-3 sm:mb-4">
@@ -115,19 +109,19 @@ const CustomerReview = () => {
                       <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <span className="text-xs sm:text-sm text-white font-medium">{review.date}</span>
+                  <span className="text-xs sm:text-sm text-white/90 font-medium">{review.date}</span>
                 </div>
                 
                 <div className="mb-3 sm:mb-4">
                   <span className="font-bold text-white text-sm sm:text-base block mb-1 sm:mb-2">
                     {review.name}
                   </span>
-                  <p className="text-white text-xs sm:text-sm backdrop-blur-md bg-black/20 p-2 sm:p-3 rounded line-clamp-4 sm:line-clamp-5 md:line-clamp-none">
+                  <p className="text-white/90 text-xs sm:text-sm bg-white/10 backdrop-blur-md p-2 sm:p-3 rounded-lg border border-white/20 line-clamp-4 sm:line-clamp-5 md:line-clamp-none leading-relaxed">
                     {review.text}
                   </p>
                 </div>
                 
-                <div className="flex items-center text-white text-xs sm:text-sm">
+                <div className="flex items-center text-white/90 text-xs sm:text-sm">
                   <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                   <span>Verified Review</span>
                 </div>
@@ -140,7 +134,7 @@ const CustomerReview = () => {
           <div className="text-center mt-6 sm:mt-8">
             <button 
               onClick={toggleReviews}
-              className="bg-blue-600 text-white text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-blue-700 transition duration-300 shadow-md"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-semibold"
             >
               {isExpanded ? 'Show Less Reviews' : 'Load More Reviews'}
             </button>
