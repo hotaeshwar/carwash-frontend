@@ -85,14 +85,14 @@ const CustomerReview = () => {
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-block mb-4 px-6 py-2 bg-blue-100/60 backdrop-blur-md rounded-full border border-blue-200/50">
-            <span className="text-blue-800 text-sm sm:text-base font-medium tracking-wide">TESTIMONIALS</span>
+          <div className="inline-block mb-4 px-6 py-2 bg-sky-100/60 backdrop-blur-md rounded-full border border-sky-200/50">
+            <span className="text-sky-800 text-sm sm:text-base font-medium tracking-wide">TESTIMONIALS</span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 relative">
-            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 drop-shadow-2xl">
               Customer Reviews
             </span>
-            <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-24 sm:w-32 lg:w-40 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full shadow-xl shadow-blue-500/50"></div>
+            <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-24 sm:w-32 lg:w-40 h-1 sm:h-2 bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 rounded-full shadow-xl shadow-sky-500/50"></div>
           </h2>
         </div>
         
@@ -100,7 +100,7 @@ const CustomerReview = () => {
           {reviews.slice(0, visibleReviews).map((review, index) => (
             <div 
               key={index} 
-              className="bg-gradient-to-br from-blue-500/90 to-blue-700/90 rounded-xl shadow-lg backdrop-blur-sm overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/50"
+              className="bg-gradient-to-br from-sky-500/90 to-sky-700/90 rounded-xl shadow-lg backdrop-blur-sm overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/50"
             >
               <div className="p-4 sm:p-5 md:p-6">
                 <div className="flex justify-between items-center mb-3 sm:mb-4">
@@ -134,7 +134,7 @@ const CustomerReview = () => {
           <div className="text-center mt-6 sm:mt-8">
             <button 
               onClick={toggleReviews}
-              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-semibold"
+              className="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-semibold"
             >
               {isExpanded ? 'Show Less Reviews' : 'Load More Reviews'}
             </button>

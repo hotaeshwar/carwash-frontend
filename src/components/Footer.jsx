@@ -9,12 +9,12 @@ const Footer = () => {
       {/* Wave curve top border */}
       <div className="w-full h-12 sm:h-14 md:h-16 bg-white">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-full">
-          <path fill="#1e40af" d="M0,0 C240,100 480,100 720,50 C960,0 1200,0 1440,100 L1440,100 L0,100 Z"></path>
+          <path fill="#0ea5e9" d="M0,0 C240,100 480,100 720,50 C960,0 1200,0 1440,100 L1440,100 L0,100 Z"></path>
         </svg>
       </div>
       
-      {/* Footer content with blue and white theme */}
-      <div className="w-full py-6 sm:py-8 md:py-10 bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 text-white">
+      {/* Footer content with sky blue and white theme */}
+      <div className="w-full py-6 sm:py-8 md:py-10 bg-gradient-to-br from-sky-700 via-sky-600 to-sky-800 text-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             
@@ -34,10 +34,10 @@ const Footer = () => {
               
               {/* Social Media Icons */}
               <div className="flex space-x-3 sm:space-x-4 mt-3 sm:mt-4">
-                <a href="#" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:bg-blue-50 transition-colors shadow-md">
+                <a href="#" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-sky-600 flex items-center justify-center hover:bg-sky-50 transition-colors shadow-md">
                   <FaFacebook size={16} className="sm:text-lg md:text-xl" />
                 </a>
-                <a href="#" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:bg-blue-50 transition-colors shadow-md">
+                <a href="#" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-sky-600 flex items-center justify-center hover:bg-sky-50 transition-colors shadow-md">
                   <FaTwitter size={16} className="sm:text-lg md:text-xl" />
                 </a>
               </div>

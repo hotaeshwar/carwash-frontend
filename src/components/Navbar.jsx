@@ -141,7 +141,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
                       <button
                         onClick={toggleServicesDropdown}
                         className={`mafia-nav-link flex items-center text-xs ${
-                          currentView === 'services' || currentView === 'auto-detailing' || currentView === 'paint-correction' || currentView === 'window-tinting' || currentView === 'ceramic-coatings' || currentView === 'remediation-claim' || currentView === 'paint-protection-film' || currentView === 'dent-repair' ? 'bg-blue-700' : ''
+                          currentView === 'services' || currentView === 'auto-detailing' || currentView === 'paint-correction' || currentView === 'window-tinting' || currentView === 'ceramic-coatings' || currentView === 'remediation-claim' || currentView === 'paint-protection-film' || currentView === 'dent-repair' ? 'bg-sky-700' : ''
                         }`}
                       >
                         <span>{link.name}</span>
@@ -159,7 +159,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
                       <button
                         onClick={() => handleNavClick(link.view, link.href)}
                         className={`mafia-nav-link text-xs ${
-                          currentView === link.view || (link.href === '#before-after' && currentView === 'before-after') ? 'bg-blue-700' : ''
+                          currentView === link.view || (link.href === '#before-after' && currentView === 'before-after') ? 'bg-sky-700' : ''
                         }`}
                       >
                         <span>{link.name}</span>
@@ -168,13 +168,13 @@ const Navbar = ({ currentView, setCurrentView }) => {
                     
                     {/* Services Dropdown */}
                     {link.name === 'SERVICES' && servicesDropdownOpen && (
-                      <div className="absolute mt-2 w-48 lg:w-52 xl:w-56 bg-black rounded-md shadow-2xl overflow-hidden z-20 border border-blue-800">
+                      <div className="absolute mt-2 w-48 lg:w-52 xl:w-56 bg-black rounded-md shadow-2xl overflow-hidden z-20 border border-sky-800">
                         <div className="py-1">
                           {serviceItems.map((service) => (
                             <button
                               key={service.name}
                               onClick={() => handleNavClick(null, service.href)}
-                              className={`w-full text-left block px-3 lg:px-4 py-2 lg:py-3 text-xs lg:text-sm text-gray-200 hover:bg-blue-800 hover:text-white transition-colors duration-200 border-l-4 border-transparent hover:border-white ${
+                              className={`w-full text-left block px-3 lg:px-4 py-2 lg:py-3 text-xs lg:text-sm text-gray-200 hover:bg-sky-800 hover:text-white transition-colors duration-200 border-l-4 border-transparent hover:border-white ${
                                 (service.href === '#auto-detailing' && currentView === 'auto-detailing') ||
                                 (service.href === '#paint-correction' && currentView === 'paint-correction') ||
                                 (service.href === '#window-tinting' && currentView === 'window-tinting') ||
@@ -182,7 +182,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
                                 (service.href === '#remediation-claims' && currentView === 'remediation-claim') ||
                                 (service.href === '#paint-protection-film' && currentView === 'paint-protection-film') ||
                                 (service.href === '#dent-repair' && currentView === 'dent-repair')
-                                  ? 'bg-blue-800 border-white' : ''
+                                  ? 'bg-sky-800 border-white' : ''
                               }`}
                             >
                               {service.name}
@@ -240,7 +240,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
                     <>
                       <button
                         onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                        className="w-full flex justify-between items-center px-3 sm:px-4 py-2 sm:py-3 rounded-md text-sm sm:text-base md:text-lg font-medium text-white hover:text-blue-300 hover:bg-blue-900"
+                        className="w-full flex justify-between items-center px-3 sm:px-4 py-2 sm:py-3 rounded-md text-sm sm:text-base md:text-lg font-medium text-white hover:text-sky-300 hover:bg-sky-900"
                       >
                         {link.name}
                         <svg 
@@ -259,7 +259,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
                             <button
                               key={service.name}
                               onClick={() => handleNavClick(null, service.href)}
-                              className={`w-full text-left block px-3 sm:px-4 py-2 sm:py-3 rounded-md text-xs sm:text-sm md:text-base font-medium text-gray-200 hover:text-white hover:bg-blue-800 border-l-2 border-blue-700 ${
+                              className={`w-full text-left block px-3 sm:px-4 py-2 sm:py-3 rounded-md text-xs sm:text-sm md:text-base font-medium text-gray-200 hover:text-white hover:bg-sky-800 border-l-2 border-sky-700 ${
                                 (service.href === '#auto-detailing' && currentView === 'auto-detailing') ||
                                 (service.href === '#paint-correction' && currentView === 'paint-correction') ||
                                 (service.href === '#window-tinting' && currentView === 'window-tinting') ||
@@ -267,7 +267,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
                                 (service.href === '#remediation-claims' && currentView === 'remediation-claim') ||
                                 (service.href === '#paint-protection-film' && currentView === 'paint-protection-film') ||
                                 (service.href === '#dent-repair' && currentView === 'dent-repair')
-                                  ? 'bg-blue-800' : ''
+                                  ? 'bg-sky-800' : ''
                               }`}
                             >
                               {service.name}
@@ -279,8 +279,8 @@ const Navbar = ({ currentView, setCurrentView }) => {
                   ) : (
                     <button
                       onClick={() => handleNavClick(link.view, link.href)}
-                      className={`w-full text-left block px-3 sm:px-4 py-2 sm:py-3 rounded-md text-sm sm:text-base md:text-lg font-medium text-white hover:text-blue-300 hover:bg-blue-900 ${
-                        currentView === link.view || (link.href === '#before-after' && currentView === 'before-after') ? 'bg-blue-800' : ''
+                      className={`w-full text-left block px-3 sm:px-4 py-2 sm:py-3 rounded-md text-sm sm:text-base md:text-lg font-medium text-white hover:text-sky-300 hover:bg-sky-900 ${
+                        currentView === link.view || (link.href === '#before-after' && currentView === 'before-after') ? 'bg-sky-800' : ''
                       }`}
                     >
                       {link.name}
@@ -311,7 +311,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
             font-weight: 500;
             text-transform: uppercase;
             color: white;
-            background-color: #2563eb;
+            background-color: #0ea5e9;
             clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
             margin: 0 0.1rem;
             transition: all 0.3s ease;
@@ -399,7 +399,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
           }
           
           .mafia-nav-link:hover {
-            background-color: #1d4ed8;
+            background-color: #0284c7;
             transform: translateY(-2px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
           }

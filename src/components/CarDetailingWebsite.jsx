@@ -7,9 +7,9 @@ const CarDetailingWebsite = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 overflow-hidden">
         {/* Background overlay */}
-        <div className="absolute inset-0 bg-blue-900/40"></div>
+        <div className="absolute inset-0 bg-sky-900/40"></div>
         
         {/* Hero Car Image */}
         <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-full h-full">
@@ -32,7 +32,7 @@ const CarDetailingWebsite = () => {
             href="https://www.yocale.com/widget/action-car-detailing/offerings?gei=009eaMj_I7qdseMPjsjDiQc&hl=en-IN&index=0&locations=49895&merchant_id=B53547-L49895&rwg_token=ACgRB3eVv8FcyHcBwdjLyYYzxJndWpDdj5JwjbK0BM3Q95FVj7UlEJnsWUcag15NXETRnCinPLVndetSrXO4qeadV66Tuio0hQ%3D%3D&sort=alphabetically"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
+            className="bg-white hover:bg-sky-50 text-sky-600 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
           >
             Book Your Service
           </a>
@@ -43,44 +43,44 @@ const CarDetailingWebsite = () => {
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-sky-400 mb-6">
               About Action Car Detailing
             </h2>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-sky-400 leading-relaxed">
                 Action car detailing is made up of a team of experts who can handle any size vehicles in any condition. We are dedicated to getting the job done right, there is no better place in Winnipeg to get your car detailed. Quality products, quality work and quality service is our promise.
               </p>
               
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-sky-400 leading-relaxed">
                 We are passionate about cars that's why we take our time with each vehicle. Our chemical and allergy-free interior cleaning methods will leave your car's interior spotless and scentless- the way it should be.
               </p>
               
-              <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
-                <p className="text-lg text-blue-900 font-medium">
+              <div className="bg-sky-50 p-6 rounded-lg border-l-4 border-sky-600">
+                <p className="text-lg text-sky-400 font-medium">
                   Action car Detailing offers a very thorough, deep cleaning of interior and exterior. We specialize in paint correction, ceramic coating and complete interior reconditioning. In Business for 14 years. Better Business Bureau accredited with an A+ rating. We are MPI accredited.
                 </p>
               </div>
             </div>
             
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-6 bg-blue-50 rounded-lg">
-                <div className="text-3xl font-bold text-blue-600 mb-2">14+</div>
-                <div className="text-blue-800">Years Experience</div>
+              <div className="text-center p-6 bg-sky-50 rounded-lg">
+                <div className="text-3xl font-bold text-sky-400 mb-2">14+</div>
+                <div className="text-sky-400">Years Experience</div>
               </div>
-              <div className="text-center p-6 bg-blue-50 rounded-lg">
-                <div className="text-3xl font-bold text-blue-600 mb-2">A+</div>
-                <div className="text-blue-800">BBB Rating</div>
+              <div className="text-center p-6 bg-sky-50 rounded-lg">
+                <div className="text-3xl font-bold text-sky-400 mb-2">A+</div>
+                <div className="text-sky-400">BBB Rating</div>
               </div>
-              <div className="text-center p-6 bg-blue-50 rounded-lg">
-                <CheckCircle className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                <div className="text-blue-800">MPI Accredited</div>
+              <div className="text-center p-6 bg-sky-50 rounded-lg">
+                <CheckCircle className="w-8 h-8 text-sky-400 mx-auto mb-2" />
+                <div className="text-sky-400">MPI Accredited</div>
               </div>
-              <div className="text-center p-6 bg-blue-50 rounded-lg">
-                <Star className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                <div className="text-blue-800">Premium Service</div>
+              <div className="text-center p-6 bg-sky-50 rounded-lg">
+                <Star className="w-8 h-8 text-sky-400 mx-auto mb-2" />
+                <div className="text-sky-400">Premium Service</div>
               </div>
             </div>
           </div>
@@ -91,19 +91,19 @@ const CarDetailingWebsite = () => {
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-sky-400 mb-6">
               OUR EXCLUSIVE 5-STEP SYSTEM
             </h2>
-            <p className="text-blue-700 text-lg max-w-3xl mx-auto">
+            <p className="text-sky-400 text-lg max-w-3xl mx-auto">
               Our proven process ensures your vehicle receives the most thorough cleaning possible
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Step 1 */}
-            <div className="bg-blue-600 text-white p-8 rounded-xl shadow-lg">
+            <div className="bg-sky-600 text-white p-8 rounded-xl shadow-lg">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                <div className="w-12 h-12 bg-white text-sky-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
                   1
                 </div>
                 <h3 className="text-2xl font-bold">Step 1:</h3>
@@ -114,9 +114,9 @@ const CarDetailingWebsite = () => {
             </div>
 
             {/* Step 2 */}
-            <div className="bg-blue-600 text-white p-8 rounded-xl shadow-lg">
+            <div className="bg-sky-600 text-white p-8 rounded-xl shadow-lg">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                <div className="w-12 h-12 bg-white text-sky-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
                   2
                 </div>
                 <h3 className="text-2xl font-bold">Step 2:</h3>
@@ -127,9 +127,9 @@ const CarDetailingWebsite = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="bg-blue-600 text-white p-8 rounded-xl shadow-lg">
+            <div className="bg-sky-600 text-white p-8 rounded-xl shadow-lg">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                <div className="w-12 h-12 bg-white text-sky-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
                   3
                 </div>
                 <h3 className="text-2xl font-bold">Step 3:</h3>
@@ -140,9 +140,9 @@ const CarDetailingWebsite = () => {
             </div>
 
             {/* Step 4 */}
-            <div className="bg-blue-600 text-white p-8 rounded-xl shadow-lg md:col-span-2 lg:col-span-1">
+            <div className="bg-sky-600 text-white p-8 rounded-xl shadow-lg md:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                <div className="w-12 h-12 bg-white text-sky-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
                   4
                 </div>
                 <h3 className="text-2xl font-bold">Step 4:</h3>
@@ -153,9 +153,9 @@ const CarDetailingWebsite = () => {
             </div>
 
             {/* Step 5 */}
-            <div className="bg-blue-600 text-white p-8 rounded-xl shadow-lg md:col-span-2 lg:col-span-2">
+            <div className="bg-sky-600 text-white p-8 rounded-xl shadow-lg md:col-span-2 lg:col-span-2">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                <div className="w-12 h-12 bg-white text-sky-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">
                   5
                 </div>
                 <h3 className="text-2xl font-bold">Step 5:</h3>
@@ -169,13 +169,13 @@ const CarDetailingWebsite = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-blue-50">
+      <section className="py-16 sm:py-20 lg:py-24 bg-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-sky-400 mb-6">
               Our Services
             </h2>
-            <p className="text-blue-700 text-lg max-w-3xl mx-auto">
+            <p className="text-sky-400 text-lg max-w-3xl mx-auto">
               Comprehensive detailing services to keep your vehicle in pristine condition
             </p>
           </div>
@@ -198,13 +198,13 @@ const CarDetailingWebsite = () => {
                 features: ["Interior deep clean", "Exterior polish", "Paint protection", "Quality guarantee"]
               }
             ].map((service, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-blue-600">
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">{service.title}</h3>
-                <p className="text-blue-700 mb-6">{service.description}</p>
+              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-sky-600">
+                <h3 className="text-2xl font-bold text-sky-400 mb-4">{service.title}</h3>
+                <p className="text-sky-400 mb-6">{service.description}</p>
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-blue-800">
-                      <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                    <li key={idx} className="flex items-center text-sky-400">
+                      <CheckCircle className="w-5 h-5 text-sky-400 mr-3 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -219,12 +219,12 @@ const CarDetailingWebsite = () => {
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-sky-400 mb-6">
               Read some of our Reviews
             </h2>
             
             {/* Google Reviews Badge */}
-            <div className="inline-flex items-center justify-center bg-white border-2 border-blue-500 rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+            <div className="inline-flex items-center justify-center bg-white border-2 border-sky-500 rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
               <img 
                 src={googleIcon} 
                 alt="Google Reviews" 
@@ -251,16 +251,16 @@ const CarDetailingWebsite = () => {
                 review: "The 5-step system really works. My interior was completely transformed. Worth every penny!"
               }
             ].map((review, index) => (
-              <div key={index} className="bg-blue-50 p-8 rounded-xl border-l-4 border-blue-600">
+              <div key={index} className="bg-sky-50 p-8 rounded-xl border-l-4 border-sky-600">
                 <div className="flex items-center mb-4">
                   <div className="flex">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-blue-500 fill-current" />
+                      <Star key={i} className="w-5 h-5 text-sky-400 fill-current" />
                     ))}
                   </div>
                 </div>
-                <p className="text-blue-800 mb-4 italic">"{review.review}"</p>
-                <p className="font-semibold text-blue-900">- {review.name}</p>
+                <p className="text-sky-400 mb-4 italic">"{review.review}"</p>
+                <p className="font-semibold text-sky-400">- {review.name}</p>
               </div>
             ))}
           </div>

@@ -41,14 +41,14 @@ const WindowTintingSite = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/70 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-700/60 z-10"></div>
         <img 
           src="https://actioncardetailing.ca/wp-content/uploads/2021/05/windowtint.jpg.webp" 
           alt="Window Tinting Hero"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-300 to-white bg-clip-text text-transparent">
             WINDOW TINTING
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-blue-200">
@@ -60,7 +60,7 @@ const WindowTintingSite = () => {
           <p className="text-xl md:text-2xl text-blue-200 mb-12">
             Before It Happens
           </p>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl">
+          <button className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl">
             Get Quote Now
           </button>
         </div>
@@ -71,7 +71,7 @@ const WindowTintingSite = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-blue-500 mb-8">
                 WHY WINDOW TINTING?
               </h2>
               <div className="mb-8">
@@ -84,16 +84,16 @@ const WindowTintingSite = () => {
             </div>
             <div className="space-y-8">
               <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl">
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">
+                <h3 className="text-2xl font-bold text-blue-500 mb-4">
                   Experience a New Level of Heat Rejection, UV Protection, & Good Looks
                 </h3>
-                <p className="text-blue-700 leading-relaxed mb-6">
+                <p className="text-blue-400 leading-relaxed mb-6">
                   We recommend Ceramic window film for maximum heat rejection, glare reduction, and comfort. Gone are the days of needing dark windows to provide relief; even our ultra-light films provide extreme heat reduction, so choose your shade based on your style. All films provide +99% UV protection & Lifetime Warranty. Protect delicate interiors and your loved ones!!!
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-blue-600 p-6 rounded-xl text-white">
+                <div className="bg-blue-400 p-6 rounded-xl text-white">
                   <div className="flex items-center mb-3">
                     <Sun className="text-white mr-3" size={24} />
                     <h4 className="font-bold">Superior Heat Rejection</h4>
@@ -101,7 +101,7 @@ const WindowTintingSite = () => {
                   <p className="text-blue-100">Our multilayer nano-ceramic particle technology blocks up to 98% of the infrared heat</p>
                 </div>
 
-                <div className="bg-blue-600 p-6 rounded-xl text-white">
+                <div className="bg-blue-400 p-6 rounded-xl text-white">
                   <div className="flex items-center mb-3">
                     <Shield className="text-white mr-3" size={24} />
                     <h4 className="font-bold">UV Ray Protection</h4>
@@ -109,7 +109,7 @@ const WindowTintingSite = () => {
                   <p className="text-blue-100">XPEL PRIME XR PLUS provides SPF 1,000 protection that effectively blocks over 99% of harmful UV rays</p>
                 </div>
 
-                <div className="bg-blue-600 p-6 rounded-xl text-white">
+                <div className="bg-blue-400 p-6 rounded-xl text-white">
                   <div className="flex items-center mb-3">
                     <Zap className="text-white mr-3" size={24} />
                     <h4 className="font-bold">Greater Clarity</h4>
@@ -117,7 +117,7 @@ const WindowTintingSite = () => {
                   <p className="text-blue-100">Advanced nano construction in XPEL PRIMETM XR provides superior performance without reducing outbound visibility</p>
                 </div>
 
-                <div className="bg-blue-600 p-6 rounded-xl text-white">
+                <div className="bg-blue-400 p-6 rounded-xl text-white">
                   <div className="flex items-center mb-3">
                     <Wifi className="text-white mr-3" size={24} />
                     <h4 className="font-bold">Crystal Clear Signal</h4>
@@ -131,32 +131,32 @@ const WindowTintingSite = () => {
       </section>
 
       {/* Window Tint as Easy as 1,2,3 */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Window Tint as Easy as <span className="text-blue-300">1, 2, 3</span>:
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-blue-500">
+            Window Tint as Easy as <span className="text-blue-400">1, 2, 3</span>:
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
-              <h3 className="text-xl font-bold mb-4">Select the Film</h3>
-              <div className="bg-blue-800 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-blue-400 to-blue-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 text-white">1</div>
+              <h3 className="text-xl font-bold mb-4 text-blue-500">Select the Film</h3>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
                 <img 
                   src="https://actioncardetailing.ca/wp-content/uploads/2021/05/filmselection-1.jpg.webp" 
                   alt="Film Selection"
                   className="w-full rounded mb-4"
                 />
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between bg-blue-500 text-white px-3 py-2 rounded">
+                  <div className="flex items-center justify-between bg-blue-300 text-white px-3 py-2 rounded">
                     <span>PRIME CS</span>
                     <span>GOOD</span>
                   </div>
-                  <div className="flex items-center justify-between bg-blue-600 text-white px-3 py-2 rounded">
+                  <div className="flex items-center justify-between bg-blue-400 text-white px-3 py-2 rounded">
                     <span>PRIME HP</span>
                     <span>BETTER</span>
                   </div>
-                  <div className="flex items-center justify-between bg-blue-700 text-white px-3 py-2 rounded">
+                  <div className="flex items-center justify-between bg-blue-500 text-white px-3 py-2 rounded">
                     <span>PRIME XR</span>
                     <span>BEST</span>
                   </div>
@@ -165,9 +165,9 @@ const WindowTintingSite = () => {
             </div>
 
             <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
-              <h3 className="text-xl font-bold mb-4">Select the Coverage</h3>
-              <div className="bg-blue-800 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-blue-400 to-blue-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 text-white">2</div>
+              <h3 className="text-xl font-bold mb-4 text-blue-500">Select the Coverage</h3>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
                 <img 
                   src="https://actioncardetailing.ca/wp-content/uploads/2021/05/action1.jpg.webp" 
                   alt="Coverage Selection"
@@ -179,8 +179,8 @@ const WindowTintingSite = () => {
                       key={tint}
                       className={`px-3 py-2 rounded ${
                         selectedTint === tint 
-                          ? 'bg-blue-500 text-white' 
-                          : 'bg-blue-700 text-blue-200 hover:bg-blue-600'
+                          ? 'bg-blue-400 text-white' 
+                          : 'bg-blue-100 text-blue-400 hover:bg-blue-200'
                       }`}
                       onClick={() => setSelectedTint(tint)}
                     >
@@ -192,15 +192,15 @@ const WindowTintingSite = () => {
             </div>
 
             <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
-              <h3 className="text-xl font-bold mb-4">Select the Shade</h3>
-              <div className="bg-blue-800 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-blue-400 to-blue-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 text-white">3</div>
+              <h3 className="text-xl font-bold mb-4 text-blue-500">Select the Shade</h3>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
                 <img 
                   src="https://actioncardetailing.ca/wp-content/uploads/2021/05/step3.jpg.webp" 
                   alt="Shade Selection"
                   className="w-full rounded mb-4"
                 />
-                <div className="flex justify-center space-x-2 text-sm">
+                <div className="flex justify-center space-x-2 text-sm text-blue-400">
                   <span>5%</span>
                   <span>20%</span>
                   <span>35%</span>
@@ -224,9 +224,9 @@ const WindowTintingSite = () => {
                 href="https://youtu.be/RPLIOjXU_oQ" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="absolute inset-0 flex items-center justify-center bg-blue-900/50 rounded-lg hover:bg-blue-900/30 transition-all duration-300"
+                className="absolute inset-0 flex items-center justify-center bg-blue-400/50 rounded-lg hover:bg-blue-400/30 transition-all duration-300"
               >
-                <div className="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                <div className="bg-blue-400 w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
                   <Play className="text-white ml-1" size={32} />
                 </div>
               </a>
@@ -236,24 +236,24 @@ const WindowTintingSite = () => {
       </section>
 
       {/* What Film Section */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-500 mb-4">
             1. WHAT FILM?
           </h2>
-          <p className="text-center text-blue-700 max-w-4xl mx-auto mb-16 leading-relaxed">
+          <p className="text-center text-blue-400 max-w-4xl mx-auto mb-16 leading-relaxed">
             Many shops offering window tint will quote you pricing based on their lowest grade film just to get you in the door. Once there, they educate you on films and upsell you after you realize the kind of film you desire and the number of windows you really need (eg Cal legal), thus you end up spending much more then you originally thought.
           </p>
-          <p className="text-center text-blue-800 max-w-4xl mx-auto mb-16 font-semibold">
+          <p className="text-center text-blue-500 max-w-4xl mx-auto mb-16 font-semibold">
             We are straight forward with all of our Pricing and Options as we treat our clients as we like to be treated; no surprises! The Color Stable, Ceramic or Nano Ceramic choice simply comes down to budget as both films lines we carry are quality, lifetime warrantied products.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
             {Object.entries(filmTypes).map(([key, film]) => (
-              <div key={key} className={`bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 ${selectedFilm === key ? 'ring-4 ring-blue-500' : ''}`}>
+              <div key={key} className={`bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 ${selectedFilm === key ? 'ring-4 ring-blue-400' : ''}`}>
                 <div className="p-6">
                   <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-blue-900 mb-2">{film.name}</h3>
+                    <h3 className="text-xl font-bold text-blue-500 mb-2">{film.name}</h3>
                     <div className="mb-4">
                       <img 
                         src={film.logo} 
@@ -261,7 +261,7 @@ const WindowTintingSite = () => {
                         className="h-16 mx-auto mb-2"
                       />
                     </div>
-                    <p className="text-blue-700 font-semibold">{film.subtitle}</p>
+                    <p className="text-blue-400 font-semibold">{film.subtitle}</p>
                   </div>
 
                   <div className="mb-6">
@@ -278,20 +278,20 @@ const WindowTintingSite = () => {
                   </div>
 
                   <div className={`text-center text-4xl font-black mb-6 ${
-                    film.grade === 'GOOD' ? 'text-blue-500' : 
-                    film.grade === 'BETTER' ? 'text-blue-600' : 
-                    'text-blue-700'
+                    film.grade === 'GOOD' ? 'text-blue-400' : 
+                    film.grade === 'BETTER' ? 'text-blue-500' : 
+                    'text-blue-600'
                   }`}>
                     {film.grade}
                   </div>
 
-                  <p className="text-blue-700 text-sm leading-relaxed mb-6">{film.description}</p>
+                  <p className="text-blue-400 text-sm leading-relaxed mb-6">{film.description}</p>
 
                   <div className="space-y-3">
                     {film.features.map((feature, index) => (
                       <div key={index} className="flex items-start space-x-2">
-                        <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={16} />
-                        <span className="text-sm text-blue-700">{feature}</span>
+                        <CheckCircle className="text-blue-400 mt-0.5 flex-shrink-0" size={16} />
+                        <span className="text-sm text-blue-400">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -300,8 +300,8 @@ const WindowTintingSite = () => {
                     onClick={() => setSelectedFilm(key)}
                     className={`w-full mt-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                       selectedFilm === key 
-                        ? 'bg-blue-600 text-white' 
-                        : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
+                        ? 'bg-blue-400 text-white' 
+                        : 'bg-blue-100 text-blue-400 hover:bg-blue-200'
                     }`}
                   >
                     Select Film
@@ -314,39 +314,39 @@ const WindowTintingSite = () => {
       </section>
 
       {/* What Coverage Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-500 mb-8">
             2. WHAT COVERAGE?
           </h2>
-          <p className="text-center text-blue-700 max-w-4xl mx-auto mb-16 leading-relaxed">
+          <p className="text-center text-blue-400 max-w-4xl mx-auto mb-16 leading-relaxed">
             For maximum UV Protection, heat rejection, and comfort we recommend doing as much as the budget allows. A chain is only as strong as its weakest link and for highest levels of interior protection consider all glass. Many think that factory "privacy" glass is a protective tint but unfortunately it is shaded for looks only and does not help with UV or Heat.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-blue-900 mb-8">TWO FRONTS ONLY:</h3>
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold text-blue-500 mb-8">TWO FRONTS ONLY:</h3>
+              <div className="bg-white p-8 rounded-xl shadow-lg">
                 <img 
                   src="https://actioncardetailing.ca/wp-content/uploads/2021/05/side.png.webp" 
                   alt="Two Fronts Only"
                   className="w-full max-w-md mx-auto mb-6"
                 />
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+                <button className="bg-blue-400 hover:bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
                   Get A Quote
                 </button>
               </div>
             </div>
 
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-blue-900 mb-8">SIDES AND BACK:</h3>
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold text-blue-500 mb-8">SIDES AND BACK:</h3>
+              <div className="bg-white p-8 rounded-xl shadow-lg">
                 <img 
                   src="https://actioncardetailing.ca/wp-content/uploads/2021/05/side_back.png.webp" 
                   alt="Sides and Back"
                   className="w-full max-w-md mx-auto mb-6"
                 />
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+                <button className="bg-blue-400 hover:bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
                   Get A Quote
                 </button>
               </div>
@@ -356,20 +356,20 @@ const WindowTintingSite = () => {
       </section>
 
       {/* Choose Your Shade Section */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-500 mb-8">
             3. Choose Your Shade
           </h2>
-          <p className="text-center text-blue-700 max-w-4xl mx-auto mb-16 leading-relaxed">
+          <p className="text-center text-blue-400 max-w-4xl mx-auto mb-16 leading-relaxed">
             This is where your style and personal preference gets to take control. We can stay consistent all around or mix the shades up a bit. Tint shades are so subjective as everyone has different taste so we take the time to determine what is best for you. There are local laws that dictate what the state allows on front doors and windshield so please ask and we will be happy to educate you. CLICK on the box below to experience the interactive Xpel Simulator
           </p>
 
           <div className="text-center mb-12">
-            <div className="bg-white p-8 rounded-xl shadow-xl inline-block">
-              <h3 className="text-2xl font-bold text-blue-900 mb-4">PRIME</h3>
-              <h4 className="text-xl text-blue-700 mb-6">Window Tint Simulator</h4>
-              <p className="text-blue-600 mb-6">Select a vehicle type and color. Then see how the different tint percentages, or as we call it Variable Light Transfers (VLT's), could look on the front, sides, and back of your vehicle.</p>
+            <div className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-xl shadow-xl inline-block">
+              <h3 className="text-2xl font-bold text-blue-500 mb-4">PRIME</h3>
+              <h4 className="text-xl text-blue-400 mb-6">Window Tint Simulator</h4>
+              <p className="text-blue-400 mb-6">Select a vehicle type and color. Then see how the different tint percentages, or as we call it Variable Light Transfers (VLT's), could look on the front, sides, and back of your vehicle.</p>
               <img 
                 src="https://actioncardetailing.ca/wp-content/uploads/2021/05/image10.png.webp" 
                 alt="Window Tint Simulator"
@@ -381,60 +381,60 @@ const WindowTintingSite = () => {
       </section>
 
       {/* Our Tinting Process */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-blue-500">
             OUR TINTING PROCESS
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+              <div className="bg-gradient-to-br from-blue-400 to-blue-500 w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 text-white">
                 1
               </div>
-              <h3 className="text-2xl font-bold mb-6">WE PREP</h3>
-              <div className="bg-blue-800 rounded-xl overflow-hidden mb-6">
+              <h3 className="text-2xl font-bold mb-6 text-blue-500">WE PREP</h3>
+              <div className="bg-white rounded-xl overflow-hidden mb-6 shadow-lg">
                 <img 
                   src="https://actioncardetailing.ca/wp-content/uploads/2021/05/prep.jpg.webp" 
                   alt="We Prep"
                   className="w-full h-48 object-cover"
                 />
               </div>
-              <p className="text-blue-200 leading-relaxed">
+              <p className="text-blue-400 leading-relaxed">
                 Using Xpels DAP software and the best patterns available we computer cut all film for a precise fit. We then thermally shrink each panel onto the glass and shave all edges for a smooth install.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+              <div className="bg-gradient-to-br from-blue-400 to-blue-500 w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 text-white">
                 2
               </div>
-              <h3 className="text-2xl font-bold mb-6">WE PLOT</h3>
-              <div className="bg-blue-800 rounded-xl overflow-hidden mb-6">
+              <h3 className="text-2xl font-bold mb-6 text-blue-500">WE PLOT</h3>
+              <div className="bg-white rounded-xl overflow-hidden mb-6 shadow-lg">
                 <img 
                   src="https://actioncardetailing.ca/wp-content/uploads/2021/05/plot.jpg.webp" 
                   alt="We Plot"
                   className="w-full h-48 object-cover"
                 />
               </div>
-              <p className="text-blue-200 leading-relaxed">
+              <p className="text-blue-400 leading-relaxed">
                 Using Xpels DAP software and the best patterns available we computer cut all film for a precise fit. We then thermally shrink each panel onto the glass and shave all edges for a smooth install.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+              <div className="bg-gradient-to-br from-blue-400 to-blue-500 w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 text-white">
                 3
               </div>
-              <h3 className="text-2xl font-bold mb-6">WE EXECUTE</h3>
-              <div className="bg-blue-800 rounded-xl overflow-hidden mb-6">
+              <h3 className="text-2xl font-bold mb-6 text-blue-500">WE EXECUTE</h3>
+              <div className="bg-white rounded-xl overflow-hidden mb-6 shadow-lg">
                 <img 
                   src="https://actioncardetailing.ca/wp-content/uploads/2021/05/execute.jpg.webp" 
                   alt="We Execute"
                   className="w-full h-48 object-cover"
                 />
               </div>
-              <p className="text-blue-200 leading-relaxed">
+              <p className="text-blue-400 leading-relaxed">
                 We don't take short cuts and aren't a "volume" shop that rushes the jobs in and out to remain profitable; Rather one that goes the extra mile to help you choose the right film, make the install as dust-free as possible, and return the vehicle cleaner than we received it. We want you to find value in how we treat both you and your vehicle, ultimately earning your repeat and referral business.
               </p>
             </div>
@@ -443,7 +443,7 @@ const WindowTintingSite = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-400 to-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Transform Your Vehicle?
@@ -452,10 +452,10 @@ const WindowTintingSite = () => {
             Experience the ultimate in UV protection, heat rejection, and style with our professional window tinting services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+            <button className="bg-white text-blue-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
               Get Free Quote
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
+            <button className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-400 transition-all duration-300 transform hover:scale-105">
               Call Now
             </button>
           </div>

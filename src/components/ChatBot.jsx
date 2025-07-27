@@ -75,13 +75,13 @@ const ChatBot = () => {
           onClick={toggleChat}
           className={`relative group w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl transition-all duration-300 ease-out transform hover:scale-110 active:scale-95 ${
             isOpen 
-              ? 'bg-gradient-to-br from-red-500 via-red-600 to-pink-600 shadow-red-500/50' 
-              : 'bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700 shadow-blue-500/50 hover:shadow-blue-500/70'
+              ? 'bg-gradient-to-br from-red-400 via-red-500 to-pink-500 shadow-red-400/50' 
+              : 'bg-gradient-to-br from-sky-300 via-sky-400 to-sky-500 shadow-sky-400/50 hover:shadow-sky-400/70'
           }`}
         >
           {/* Animated pulse ring */}
-          <div className={`absolute inset-0 rounded-full ${isOpen ? 'bg-red-400' : 'bg-blue-400'} opacity-75 animate-ping`}></div>
-          <div className={`absolute inset-0 rounded-full ${isOpen ? 'bg-red-400' : 'bg-blue-400'} opacity-50 animate-ping`} style={{ animationDelay: '1s' }}></div>
+          <div className={`absolute inset-0 rounded-full ${isOpen ? 'bg-red-300' : 'bg-sky-300'} opacity-75 animate-ping`}></div>
+          <div className={`absolute inset-0 rounded-full ${isOpen ? 'bg-red-300' : 'bg-sky-300'} opacity-50 animate-ping`} style={{ animationDelay: '1s' }}></div>
           
           {/* Icon */}
           <div className="relative z-10 flex items-center justify-center w-full h-full">
@@ -98,7 +98,7 @@ const ChatBot = () => {
           
           {/* Notification badge */}
           {!isOpen && (
-            <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center animate-bounce">
+            <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
               <span className="text-xs text-white font-bold">1</span>
             </div>
           )}
@@ -135,13 +135,13 @@ const ChatBot = () => {
           md:h-auto md:max-h-[600px] md:rounded-2xl md:shadow-2xl
           
           /* Card shadow and border */
-          md:border md:border-gray-200 md:shadow-blue-500/20
+          md:border md:border-gray-200 md:shadow-sky-400/20
           
           flex flex-col overflow-hidden
           `}
         >
           {/* Header with enhanced gradient and close button */}
-          <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white p-4 md:p-5">
+          <div className="relative bg-gradient-to-r from-sky-300 via-sky-400 to-sky-500 text-white p-4 md:p-5">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full transform -translate-x-16 -translate-y-16"></div>
@@ -158,7 +158,7 @@ const ChatBot = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Message Us</h3>
-                    <div className="flex items-center text-sm text-blue-100">
+                    <div className="flex items-center text-sm text-sky-100">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
                       We're online
                     </div>
@@ -176,22 +176,22 @@ const ChatBot = () => {
                 </button>
               </div>
               
-              <p className="text-sm text-blue-100">
+              <p className="text-sm text-sky-100">
                 Send us a message and we'll get back to you shortly by text.
               </p>
             </div>
           </div>
 
           {/* Welcome Message */}
-          <div className="bg-gradient-to-b from-blue-50 to-white p-4 border-b border-gray-100">
+          <div className="bg-gradient-to-b from-sky-50 to-white p-4 border-b border-gray-100">
             <div className="flex items-start space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 bg-gradient-to-br from-sky-400 to-sky-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <div className="bg-white rounded-lg rounded-tl-none p-3 shadow-sm border border-gray-200 flex-1">
-                <p className="text-sm text-gray-700">Hi there! 👋 Send us a message to learn more about our services.</p>
+                <p className="text-sm text-sky-600">Hi there! 👋 Send us a message to learn more about our services.</p>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@ const ChatBot = () => {
             <div className="space-y-4">
               {/* Name Field */}
               <div className="group">
-                <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="block text-sm font-medium text-sky-500 mb-2 group-hover:text-sky-600 transition-colors">
                   NAME
                 </label>
                 <input
@@ -209,10 +209,10 @@ const ChatBot = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 text-sm border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${
+                  className={`w-full px-4 py-3 text-sm border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition-all duration-300 ${
                     errors.name 
                       ? 'border-red-400 bg-red-50' 
-                      : 'border-gray-200 hover:border-blue-300 focus:bg-blue-50'
+                      : 'border-sky-200 hover:border-sky-300 focus:bg-sky-50'
                   }`}
                   placeholder="Enter your name"
                 />
@@ -226,7 +226,7 @@ const ChatBot = () => {
 
               {/* Mobile Field */}
               <div className="group">
-                <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="block text-sm font-medium text-sky-500 mb-2 group-hover:text-sky-600 transition-colors">
                   MOBILE NUMBER
                 </label>
                 <input
@@ -234,10 +234,10 @@ const ChatBot = () => {
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 text-sm border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${
+                  className={`w-full px-4 py-3 text-sm border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition-all duration-300 ${
                     errors.mobile 
                       ? 'border-red-400 bg-red-50' 
-                      : 'border-gray-200 hover:border-blue-300 focus:bg-blue-50'
+                      : 'border-sky-200 hover:border-sky-300 focus:bg-sky-50'
                   }`}
                   placeholder="Enter your mobile number"
                 />
@@ -251,7 +251,7 @@ const ChatBot = () => {
 
               {/* Message Field */}
               <div className="group">
-                <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="block text-sm font-medium text-sky-500 mb-2 group-hover:text-sky-600 transition-colors">
                   MESSAGE
                 </label>
                 <textarea
@@ -259,10 +259,10 @@ const ChatBot = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="3"
-                  className={`w-full px-4 py-3 text-sm border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 resize-none ${
+                  className={`w-full px-4 py-3 text-sm border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition-all duration-300 resize-none ${
                     errors.message 
                       ? 'border-red-400 bg-red-50' 
-                      : 'border-gray-200 hover:border-blue-300 focus:bg-blue-50'
+                      : 'border-sky-200 hover:border-sky-300 focus:bg-sky-50'
                   }`}
                   placeholder="Type your message here..."
                 ></textarea>
@@ -282,13 +282,13 @@ const ChatBot = () => {
                     name="agreeToPolicy"
                     checked={formData.agreeToPolicy}
                     onChange={handleChange}
-                    className={`mt-1 w-4 h-4 text-blue-600 border-2 rounded focus:ring-2 focus:ring-blue-500 transition-colors ${
-                      errors.agreeToPolicy ? 'border-red-400' : 'border-gray-300'
+                    className={`mt-1 w-4 h-4 text-sky-400 border-2 rounded focus:ring-2 focus:ring-sky-400 transition-colors ${
+                      errors.agreeToPolicy ? 'border-red-400' : 'border-sky-300'
                     }`}
                   />
-                  <label className="text-xs text-gray-600 leading-relaxed">
+                  <label className="text-xs text-sky-500 leading-relaxed">
                     By checking this box, you agree to our{' '}
-                    <a href="#" className="text-blue-600 hover:text-blue-800 underline">Privacy Policy</a>
+                    <a href="#" className="text-sky-600 hover:text-sky-700 underline">Privacy Policy</a>
                     {' '}and consent to receive communications from us.
                   </label>
                 </div>
@@ -303,18 +303,18 @@ const ChatBot = () => {
               </div>
 
               {/* Terms and Conditions */}
-              <div className="bg-gray-50 rounded-xl p-3 space-y-2 text-xs text-gray-500">
+              <div className="bg-sky-50 rounded-xl p-3 space-y-2 text-xs text-sky-400">
                 <p>By submitting, you authorize Action Car Detailing to send text messages with offers & other information.</p>
                 <p>Message/data rates may apply. Reply HELP for help or STOP to cancel.</p>
                 <p>
-                  <a href="#" className="text-blue-600 hover:underline">Use is subject to terms.</a>
+                  <a href="#" className="text-sky-500 hover:underline">Use is subject to terms.</a>
                 </p>
               </div>
 
               {/* Submit Button */}
               <button
                 onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="w-full bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 hover:from-sky-500 hover:via-sky-600 hover:to-sky-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2"
               >
                 <span className="flex items-center justify-center">
                   SEND MESSAGE

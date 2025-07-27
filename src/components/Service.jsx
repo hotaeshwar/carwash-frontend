@@ -46,6 +46,8 @@ const Service = () => {
   // State management
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
   const videoRefs = useRef([]);
   const intervalRef = useRef(null);
   
@@ -92,9 +94,9 @@ const Service = () => {
       title: "Premium Auto Detailing",
       shortDescription: "Complete interior and exterior restoration services",
       icon: faCar,
-      gradientFrom: "blue-400",
-      gradientTo: "blue-600",
-      hoverColor: "blue-600",
+      gradientFrom: "sky-400",
+      gradientTo: "sky-600",
+      hoverColor: "sky-600",
       fullDescription: "Our comprehensive auto detailing service combines advanced techniques with premium-grade products to restore your vehicle to showroom condition.",
       features: [
         "Professional hand wash and chamois drying technique",
@@ -112,9 +114,9 @@ const Service = () => {
       title: "Professional Paint Correction",
       shortDescription: "Multi-stage polishing and restoration services",
       icon: faSprayCan,
-      gradientFrom: "blue-300",
-      gradientTo: "blue-500",
-      hoverColor: "blue-600",
+      gradientFrom: "sky-300",
+      gradientTo: "sky-500",
+      hoverColor: "sky-600",
       fullDescription: "Our paint correction specialists use precision polishing techniques and professional-grade compounds to eliminate swirl marks, scratches, and oxidation.",
       features: [
         "Comprehensive paint depth and condition analysis",
@@ -132,9 +134,9 @@ const Service = () => {
       title: "Ceramic Window Tinting",
       shortDescription: "Premium film installation with lifetime warranty",
       icon: faWindowMaximize,
-      gradientFrom: "blue-500",
-      gradientTo: "blue-700",
-      hoverColor: "blue-600",
+      gradientFrom: "sky-500",
+      gradientTo: "sky-700",
+      hoverColor: "sky-600",
       fullDescription: "Our window tinting service utilizes the highest quality ceramic films available, installed by certified technicians using precision cutting and application techniques.",
       features: [
         "Premium ceramic film technology for superior performance",
@@ -152,9 +154,9 @@ const Service = () => {
       title: "Ceramic Paint Coating",
       shortDescription: "Long-term paint protection with 5+ year durability",
       icon: faShield,
-      gradientFrom: "blue-400",
-      gradientTo: "blue-600",
-      hoverColor: "blue-600",
+      gradientFrom: "sky-400",
+      gradientTo: "sky-600",
+      hoverColor: "sky-600",
       fullDescription: "Our ceramic coating service provides the ultimate in paint protection and enhancement using industry-leading 9H ceramic technology.",
       features: [
         "9H hardness ceramic protection exceeding OEM paint durability",
@@ -172,9 +174,9 @@ const Service = () => {
       title: "Paint Protection Film",
       shortDescription: "Self-healing film installation with 10-year warranty",
       icon: faCheck,
-      gradientFrom: "blue-300",
-      gradientTo: "blue-500",
-      hoverColor: "blue-600",
+      gradientFrom: "sky-300",
+      gradientTo: "sky-500",
+      hoverColor: "sky-600",
       fullDescription: "Our paint protection film installation provides the highest level of defense against road debris, stone chips, and environmental damage.",
       features: [
         "Self-healing technology repairs minor scratches automatically",
@@ -207,7 +209,7 @@ const Service = () => {
         textAnchor="middle"
         fontSize="14"
         fontWeight="bold"
-        fill="#1e40af"
+        fill="#0ea5e9"
         fontFamily="Arial, sans-serif"
       >
         MPI
@@ -336,14 +338,14 @@ const Service = () => {
   const SectionDivider = () => (
     <div className="relative py-8 sm:py-12 md:py-16">
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-px bg-gradient-to-r from-transparent via-sky-400/50 to-transparent"></div>
       </div>
       <div className="relative flex justify-center">
         <div className="bg-white px-4 sm:px-6">
           <div className="flex space-x-1">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse delay-150"></div>
-            <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse delay-300"></div>
+            <div className="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-sky-500 rounded-full animate-pulse delay-150"></div>
+            <div className="w-2 h-2 bg-sky-600 rounded-full animate-pulse delay-300"></div>
           </div>
         </div>
       </div>
@@ -353,15 +355,19 @@ const Service = () => {
   // Screen size state
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check screen size on mount and resize
+  // Check screen size and device type on mount and resize
   useEffect(() => {
     const checkScreenSize = () => {
       // iPad Pro (up to 1366px) and smaller should use modals
       // Large desktop screens (1600px+) should use flip cards
       const width = window.innerWidth;
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
       console.log('Screen width detected:', width);
       setIsMobile(width < 1600);
+      setIsMobileDevice(isMobile || width < 768);
       console.log('isMobile set to:', width < 1600, '(true = modal, false = flip)');
+      console.log('isMobileDevice set to:', isMobile || width < 768);
     };
 
     // Check on mount
@@ -445,10 +451,6 @@ const Service = () => {
   const nextSlide = useCallback(() => {
     goToSlide((currentSlide + 1) % videos.length);
   }, [currentSlide, videos.length, goToSlide]);
-
-  const prevSlide = useCallback(() => {
-    goToSlide((currentSlide - 1 + videos.length) % videos.length);
-  }, [currentSlide, videos.length, goToSlide]);
   
   // Service modal handlers
   const openModal = (serviceName) => {
@@ -519,54 +521,87 @@ const Service = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobile, isCardModalOpen]);
 
-  // Effects
+  // Effects - Optimized video management
   useEffect(() => {
+    // Longer interval for mobile devices to reduce performance strain
+    const interval = isMobileDevice ? 10000 : 8000;
+    
     intervalRef.current = setInterval(() => {
       if (isPlaying) {
         nextSlide();
       }
-    }, 8000);
+    }, interval);
 
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isPlaying, nextSlide]);
+  }, [isPlaying, nextSlide, isMobileDevice]);
 
+  // Optimized video loading and playback
   useEffect(() => {
     const playCurrentVideo = async () => {
       try {
-        videoRefs.current.forEach(video => {
-          if (video) video.pause();
+        // Pause all videos first
+        videoRefs.current.forEach((video, index) => {
+          if (video && index !== currentSlide) {
+            video.pause();
+            video.currentTime = 0; // Reset to beginning
+          }
         });
 
-        if (videoRefs.current[currentSlide]) {
-          await videoRefs.current[currentSlide].play();
+        // Play current video with mobile optimization
+        const currentVideo = videoRefs.current[currentSlide];
+        if (currentVideo) {
+          // For mobile devices, ensure video is ready before playing
+          if (isMobileDevice) {
+            currentVideo.load(); // Reload video for mobile
+            await new Promise(resolve => {
+              currentVideo.addEventListener('loadeddata', resolve, { once: true });
+              setTimeout(resolve, 2000); // Fallback timeout
+            });
+          }
+          
+          // Attempt to play with error handling
+          try {
+            await currentVideo.play();
+            setIsVideoLoaded(true);
+          } catch (playError) {
+            console.log("Video play failed, retrying:", playError);
+            // Retry once after a short delay
+            setTimeout(async () => {
+              try {
+                await currentVideo.play();
+              } catch (retryError) {
+                console.log("Video play retry failed:", retryError);
+              }
+            }, 500);
+          }
         }
       } catch (error) {
-        console.log("Video playback error:", error);
+        console.log("Video management error:", error);
       }
     };
 
     playCurrentVideo();
-  }, [currentSlide]);
+  }, [currentSlide, isMobileDevice]);
 
   // Render helpers
   const renderServiceCard = (icon, title, description, customIcon = null) => (
     <div 
-      className="group cursor-pointer bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 backdrop-blur-lg rounded-2xl shadow-xl shadow-blue-300/30 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 p-6 sm:p-8 text-center transform hover:-translate-y-3 hover:scale-105 relative overflow-hidden border border-blue-200/50" 
+      className="group cursor-pointer bg-gradient-to-br from-sky-50 via-sky-100 to-sky-50 backdrop-blur-lg rounded-2xl shadow-xl shadow-sky-300/30 hover:shadow-2xl hover:shadow-sky-500/30 transition-all duration-500 p-6 sm:p-8 text-center transform hover:-translate-y-3 hover:scale-105 relative overflow-hidden border border-sky-200/50" 
       onClick={() => openModal(title)}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-blue-400/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-sky-400/10 to-sky-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       
-      <div className="absolute top-4 right-4 w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
-      <div className="absolute bottom-8 left-6 w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
-      <div className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-blue-600 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-500"></div>
+      <div className="absolute top-4 right-4 w-2 h-2 bg-sky-500 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
+      <div className="absolute bottom-8 left-6 w-1 h-1 bg-sky-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700"></div>
+      <div className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-sky-600 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-500"></div>
       
       <div className="relative z-10">
         <div className="mb-6 flex justify-center">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-xl shadow-blue-500/30 group-hover:shadow-2xl group-hover:shadow-blue-500/40 transform group-hover:rotate-12 transition-all duration-500 relative overflow-hidden">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center shadow-xl shadow-sky-500/30 group-hover:shadow-2xl group-hover:shadow-sky-500/40 transform group-hover:rotate-12 transition-all duration-500 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             {/* Show imported images for Ceramic Coating and Paint Protection */}
@@ -593,9 +628,9 @@ const Service = () => {
         </div>
         
         <div className="text-center">
-          <h3 className="text-xl sm:text-2xl font-bold mb-3 text-blue-800 group-hover:text-blue-600 transition-colors duration-300">{title}</h3>
-          <p className="text-sm sm:text-base text-blue-600 mb-4 leading-relaxed">{description}</p>
-          <div className="flex items-center justify-center text-blue-500 hover:text-blue-600 transition-colors group-hover:scale-110 group-hover:font-semibold">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 text-sky-800 group-hover:text-sky-600 transition-colors duration-300">{title}</h3>
+          <p className="text-sm sm:text-base text-sky-600 mb-4 leading-relaxed">{description}</p>
+          <div className="flex items-center justify-center text-sky-500 hover:text-sky-600 transition-colors group-hover:scale-110 group-hover:font-semibold">
             <span className="text-sm sm:text-base mr-2">View Details</span>
             <FontAwesomeIcon icon={faArrowRight} className="transform group-hover:translate-x-2 transition-transform duration-300" />
           </div>
@@ -607,13 +642,13 @@ const Service = () => {
   const renderSparkleCard = (id, icon, title, description) => (
     <div className="group min-h-[16rem] sm:min-h-[18rem] md:min-h-[20rem] lg:min-h-[24rem] xl:min-h-[26rem] relative perspective-1000">
       <div className="relative w-full h-full transform-gpu transition-all duration-700 group-hover:rotate-y-12 group-hover:-translate-y-2 sm:group-hover:-translate-y-4 group-hover:scale-105">
-        <div className="absolute w-full h-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50 group-hover:shadow-3xl group-hover:shadow-blue-500/50">
-          <div className="w-full h-full bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-transparent to-blue-600/30 animate-pulse"></div>
+        <div className="absolute w-full h-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl shadow-sky-900/50 group-hover:shadow-3xl group-hover:shadow-sky-500/50">
+          <div className="w-full h-full bg-gradient-to-br from-sky-600 via-sky-700 to-sky-800 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/30 via-transparent to-sky-600/30 animate-pulse"></div>
             
             <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-2 h-2 sm:w-3 sm:h-3 bg-white/80 rounded-full opacity-60 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-100"></div>
-            <div className="absolute bottom-4 left-3 sm:bottom-8 sm:left-6 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-300/80 rounded-full opacity-50 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-300"></div>
-            <div className="absolute top-1/3 right-4 sm:right-8 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-blue-200/80 rounded-full opacity-40 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-500"></div>
+            <div className="absolute bottom-4 left-3 sm:bottom-8 sm:left-6 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-sky-300/80 rounded-full opacity-50 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-300"></div>
+            <div className="absolute top-1/3 right-4 sm:right-8 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-sky-200/80 rounded-full opacity-40 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-500"></div>
             <div className="absolute bottom-1/3 left-2 sm:left-4 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white/70 rounded-full opacity-50 group-hover:opacity-100 animate-bounce transition-opacity duration-300 delay-700"></div>
             
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 skew-x-12"></div>
@@ -669,10 +704,10 @@ const Service = () => {
         >
           {/* Front Side */}
           <div 
-            className="absolute w-full h-full rounded-xl sm:rounded-2xl shadow-2xl shadow-blue-900/50 overflow-hidden mobile-flip-card-front" 
+            className="absolute w-full h-full rounded-xl sm:rounded-2xl shadow-2xl shadow-sky-900/50 overflow-hidden mobile-flip-card-front" 
             style={{ backfaceVisibility: 'hidden' }}
           >
-            <div className="w-full h-full bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 relative mirror-card">
+            <div className="w-full h-full bg-gradient-to-br from-sky-500 via-sky-600 to-sky-700 relative mirror-card">
               {/* Mirror effects */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500 ease-in-out skew-x-12 mirror-shine"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-70"></div>
@@ -738,13 +773,13 @@ const Service = () => {
           
           {/* Back Side - Show on large desktop screens */}
           <div 
-            className={`${isMobile ? 'hidden' : 'hidden lg:block'} absolute w-full h-full rounded-xl sm:rounded-2xl shadow-2xl shadow-blue-900/50 overflow-hidden mobile-flip-card-back`} 
+            className={`${isMobile ? 'hidden' : 'hidden lg:block'} absolute w-full h-full rounded-xl sm:rounded-2xl shadow-2xl shadow-sky-900/50 overflow-hidden mobile-flip-card-back`} 
             style={{ 
               backfaceVisibility: 'hidden', 
               transform: 'rotateY(180deg)'
             }}
           >
-            <div className="w-full h-full bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 p-4 xs:p-5 sm:p-6 md:p-8 relative overflow-hidden mirror-card">
+            <div className="w-full h-full bg-gradient-to-br from-sky-600 via-sky-700 to-sky-800 p-4 xs:p-5 sm:p-6 md:p-8 relative overflow-hidden mirror-card">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500 ease-in-out skew-x-12 mirror-shine delay-300"></div>
               
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-70"></div>
@@ -752,7 +787,7 @@ const Service = () => {
               <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-white/20 group-hover:border-white/40 transition-all duration-500"></div>
               
               <div className="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-white/10 rounded-full -translate-y-10 sm:-translate-y-16 translate-x-10 sm:translate-x-16 animate-pulse"></div>
-              <div className="absolute bottom-0 left-0 w-16 sm:w-24 h-16 sm:h-24 bg-blue-400/20 rounded-full translate-y-8 sm:translate-y-12 -translate-x-8 sm:-translate-x-12 animate-pulse delay-300"></div>
+              <div className="absolute bottom-0 left-0 w-16 sm:w-24 h-16 sm:h-24 bg-sky-400/20 rounded-full translate-y-8 sm:translate-y-12 -translate-x-8 sm:-translate-x-12 animate-pulse delay-300"></div>
               
               <div className="flex flex-col h-full justify-center items-center text-center relative z-10">
                 <div className="mb-3 xs:mb-4 sm:mb-6 md:mb-8">
@@ -846,22 +881,22 @@ const Service = () => {
             <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">{selectedService.fullDescription}</p>
             
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800 flex items-center">
-              <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mr-3"></div>
+              <div className="w-6 h-6 bg-gradient-to-r from-sky-500 to-sky-600 rounded-full mr-3"></div>
               Features
             </h3>
             <ul className="mb-6 sm:mb-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {selectedService.features.map((feature, index) => (
                 <li key={index} className="flex items-start p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-500 mt-1 mr-3 text-lg flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheck} className="text-sky-500 mt-1 mr-3 text-lg flex-shrink-0" />
                   <span className="text-base sm:text-lg text-gray-700">{feature}</span>
                 </li>
               ))}
             </ul>
             
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-6 rounded-2xl mb-6 sm:mb-8 border border-blue-200">
+            <div className="bg-gradient-to-r from-sky-50 to-sky-100 p-4 sm:p-6 rounded-2xl mb-6 sm:mb-8 border border-sky-200">
               <div className="flex justify-between items-center">
                 <span className="text-base sm:text-lg text-gray-700 font-semibold">Starting Price</span>
-                <span className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">{selectedService.price}</span>
+                <span className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-sky-800">{selectedService.price}</span>
               </div>
             </div>
           </div>
@@ -873,7 +908,7 @@ const Service = () => {
             >
               Close
             </button>
-            <button className="px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-base sm:text-lg text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 font-semibold">
+            <button className="px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-base sm:text-lg text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 font-semibold">
               Book Service
             </button>
           </div>
@@ -895,7 +930,7 @@ const Service = () => {
         
         <div 
           ref={cardModalRef}
-          className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-2xl shadow-3xl max-w-sm w-full mx-auto overflow-hidden transform transition-all duration-500 opacity-100 scale-100 border-2 border-white/20"
+          className="relative bg-gradient-to-br from-sky-600 via-sky-700 to-sky-800 rounded-2xl shadow-3xl max-w-sm w-full mx-auto overflow-hidden transform transition-all duration-500 opacity-100 scale-100 border-2 border-white/20"
           style={{maxHeight: '85vh'}}
           onClick={(e) => {
             // Prevent modal from closing when clicking inside the modal content
@@ -994,16 +1029,16 @@ const Service = () => {
       <div className="py-12 md:py-20 lg:py-28 relative overflow-hidden bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 sm:mb-16 lg:mb-24">
-            <div className="inline-block mb-4 px-6 py-2 bg-blue-100/60 backdrop-blur-md rounded-full border border-blue-200/50">
-              <span className="text-blue-800 text-sm sm:text-base font-medium tracking-wide">PREMIUM SERVICES</span>
+            <div className="inline-block mb-4 px-6 py-2 bg-sky-100/60 backdrop-blur-md rounded-full border border-sky-200/50">
+              <span className="text-sky-800 text-sm sm:text-base font-medium tracking-wide">PREMIUM SERVICES</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 relative">
-              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 drop-shadow-2xl">
                 CHOOSE YOUR SERVICE
               </span>
-              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full shadow-xl shadow-blue-500/50"></div>
+              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 rounded-full shadow-xl shadow-sky-500/50"></div>
             </h2>
-            <p className="text-xl sm:text-2xl text-blue-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-sky-700 max-w-3xl mx-auto leading-relaxed">
               Transform your vehicle with our premium detailing services
             </p>
           </div>
@@ -1023,24 +1058,24 @@ const Service = () => {
 
       {/* FREE PAINT EVALUATION Banner */}
       <div className="relative py-16 md:py-24 lg:py-32 overflow-hidden bg-white">
-        <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500/20 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-32 h-32 bg-blue-400/20 rounded-full animate-pulse delay-300"></div>
+        <div className="absolute top-10 left-10 w-20 h-20 bg-sky-500/20 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-sky-400/20 rounded-full animate-pulse delay-300"></div>
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full animate-bounce delay-500"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-block mb-6 sm:mb-8 px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-gray-100 to-gray-200 rounded-full backdrop-blur-md border border-gray-200 shadow-xl">
-            <span className="text-base sm:text-lg font-bold tracking-wider text-blue-600">LIMITED TIME OFFER</span>
+            <span className="text-base sm:text-lg font-bold tracking-wider text-sky-600">LIMITED TIME OFFER</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-6 sm:mb-8 lg:mb-10">
-            <span className="block text-gray-800 drop-shadow-2xl">FREE PAINT EVALUATION</span>
-            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+            <span className="block text-sky-700 drop-shadow-2xl">FREE PAINT EVALUATION</span>
+            <span className="block text-sky-600 drop-shadow-2xl">
               & ESTIMATE
             </span>
           </h2>
-          <p className="text-xl sm:text-2xl text-gray-700 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-sky-700 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
             Professional assessment of your vehicle's paint condition - absolutely free!
           </p>
-          <button className="group relative px-10 py-4 sm:px-12 sm:py-6 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 text-white text-lg sm:text-xl font-bold rounded-2xl transition-all duration-300 shadow-2xl shadow-blue-500/50 hover:shadow-3xl hover:shadow-blue-500/70 transform hover:-translate-y-2 hover:scale-105 overflow-hidden">
+          <button className="group relative px-10 py-4 sm:px-12 sm:py-6 bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 hover:from-sky-500 hover:via-sky-600 hover:to-sky-700 text-white text-lg sm:text-xl font-bold rounded-2xl transition-all duration-300 shadow-2xl shadow-sky-500/50 hover:shadow-3xl hover:shadow-sky-500/70 transform hover:-translate-y-2 hover:scale-105 overflow-hidden">
             <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span className="relative z-10">Claim Your Free Evaluation</span>
           </button>
@@ -1058,19 +1093,19 @@ const Service = () => {
               <span className="text-gray-700 text-sm sm:text-base font-medium tracking-wide">SHOWCASE</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 relative">
-              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 drop-shadow-2xl">
                 PERFECT SOLUTIONS
               </span>
-              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full shadow-xl shadow-blue-500/50"></div>
+              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 rounded-full shadow-xl shadow-sky-500/50"></div>
             </h2>
             <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               FOR ALL VEHICLES
             </p>
           </div>
 
-          {/* Video Slider */}
+          {/* Video Slider - Mobile Optimized */}
           <div className="relative max-w-6xl mx-auto rounded-3xl shadow-3xl shadow-black/50 overflow-hidden border-4 border-white/20">
-            <div className="relative aspect-video">
+            <div className="relative aspect-video bg-black">
               {videos.map((video, index) => (
                 <div
                   key={index}
@@ -1083,31 +1118,64 @@ const Service = () => {
                     muted
                     loop
                     playsInline
+                    preload={index === 0 ? "auto" : isMobileDevice ? "none" : "metadata"}
+                    poster={index === currentSlide ? undefined : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"}
+                    onLoadedData={() => {
+                      if (index === currentSlide) {
+                        setIsVideoLoaded(true);
+                      }
+                    }}
+                    onError={(e) => {
+                      console.log(`Video ${index} error:`, e);
+                    }}
+                    onWaiting={() => {
+                      console.log(`Video ${index} buffering...`);
+                    }}
+                    onCanPlay={() => {
+                      if (index === currentSlide) {
+                        console.log(`Video ${index} can play`);
+                      }
+                    }}
+                    style={{
+                      willChange: 'transform',
+                      backfaceVisibility: 'hidden',
+                      transform: 'translateZ(0)', // Force GPU acceleration
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 flex items-end p-6 sm:p-8 md:p-10">
-                    <div className="w-full">
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">{video.title}</h3>
-                      <p className="text-white/90 text-lg sm:text-xl drop-shadow-md">{video.description}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 flex items-end justify-center p-4 sm:p-6 md:p-8 lg:p-10">
+                    <div className="w-full text-center">
+                      <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-sky-400 mb-1 sm:mb-2 drop-shadow-lg leading-tight">
+                        {video.title}
+                      </h3>
+                      <p className="text-sky-300/90 text-sm sm:text-lg md:text-xl drop-shadow-md leading-relaxed">
+                        {video.description}
+                      </p>
                     </div>
                   </div>
+                  
+                  {/* Loading indicator for mobile */}
+                  {isMobileDevice && !isVideoLoaded && index === currentSlide && (
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-20">
+                      <div className="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
-
-            <button
-              className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:shadow-2xl z-20 hover:scale-110 border-2 border-white/50"
-              onClick={prevSlide}
-              aria-label="Previous video"
-            >
-              <span className="text-xl sm:text-2xl md:text-3xl font-bold">‹</span>
-            </button>
-            <button
-              className="absolute right-4 sm:right-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:shadow-2xl z-20 hover:scale-110 border-2 border-white/50"
-              onClick={nextSlide}
-              aria-label="Next video"
-            >
-              <span className="text-xl sm:text-2xl md:text-3xl font-bold">›</span>
-            </button>
+            
+            {/* Video indicators - Mobile friendly */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+              {videos.map((_, index) => (
+                <div
+                  key={index}
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-white scale-125' 
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -1117,8 +1185,8 @@ const Service = () => {
       
       {/* QUALITY SERVICE Section */}
       <div className="py-16 md:py-24 lg:py-32 relative overflow-hidden bg-white">
-        <div className="absolute top-20 left-20 w-24 h-24 bg-blue-500/20 rounded-full animate-float"></div>
-        <div className="absolute bottom-32 right-32 w-32 h-32 bg-blue-400/20 rounded-full animate-float delay-1000"></div>
+        <div className="absolute top-20 left-20 w-24 h-24 bg-sky-500/20 rounded-full animate-float"></div>
+        <div className="absolute bottom-32 right-32 w-32 h-32 bg-sky-400/20 rounded-full animate-float delay-1000"></div>
         <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-white/10 rounded-full animate-float delay-2000"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -1126,14 +1194,14 @@ const Service = () => {
             <span className="text-gray-700 text-sm sm:text-base font-medium tracking-wide">EXCELLENCE</span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-12 sm:mb-16 lg:mb-20 tracking-wider">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 drop-shadow-2xl">
               QUALITY SERVICE
             </span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mt-12 sm:mt-16 md:mt-20">
-            <div className="group relative bg-gradient-to-br from-blue-600/80 to-blue-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-blue-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group relative bg-gradient-to-br from-sky-600/80 to-sky-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-sky-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/50 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               
               <div className="relative z-10">
@@ -1147,8 +1215,8 @@ const Service = () => {
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-blue-600/80 to-blue-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-blue-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group relative bg-gradient-to-br from-sky-600/80 to-sky-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-sky-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/50 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               
               <div className="relative z-10">
@@ -1162,8 +1230,8 @@ const Service = () => {
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-blue-600/80 to-blue-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-blue-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group relative bg-gradient-to-br from-sky-600/80 to-sky-800/80 p-8 sm:p-10 md:p-12 rounded-3xl backdrop-blur-md border border-sky-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/50 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               
               <div className="relative z-10">
@@ -1191,12 +1259,12 @@ const Service = () => {
               <span className="text-gray-700 text-sm sm:text-base font-medium tracking-wide">PREMIUM QUALITY</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 relative">
-              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 drop-shadow-2xl">
                 YOUR VEHICLE DESERVES
               </span>
-              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full shadow-xl shadow-blue-500/50"></div>
+              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 rounded-full shadow-xl shadow-sky-500/50"></div>
             </h2>
-            <p className="text-3xl sm:text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+            <p className="text-3xl sm:text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 drop-shadow-2xl">
               THE BEST
             </p>
           </div>
@@ -1221,10 +1289,10 @@ const Service = () => {
               <span className="text-gray-700 text-sm sm:text-base font-medium tracking-wide">WHY CHOOSE US</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 relative">
-              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 drop-shadow-2xl">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 drop-shadow-2xl">
                 ACTION CAR DETAILING
               </span>
-              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full shadow-xl shadow-blue-500/50"></div>
+              <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 lg:w-48 h-1 sm:h-2 bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 rounded-full shadow-xl shadow-sky-500/50"></div>
             </h2>
           </div>
 
@@ -1493,7 +1561,7 @@ const Service = () => {
             gap: 1.5rem;
           }
           
-          .group.relative.bg-gradient-to-br.from-blue-600\\/80.to-blue-800\\/80 {
+          .group.relative.bg-gradient-to-br.from-sky-600\\/80.to-sky-800\\/80 {
             padding: 1.5rem;
             min-height: 280px;
             display: flex;
@@ -1501,25 +1569,25 @@ const Service = () => {
             justify-content: center;
           }
           
-          .group.relative.bg-gradient-to-br.from-blue-600\\/80.to-blue-800\\/80 h3 {
+          .group.relative.bg-gradient-to-br.from-sky-600\\/80.to-sky-800\\/80 h3 {
             font-size: 1.25rem;
             line-height: 1.4;
             margin-bottom: 0.75rem;
           }
           
-          .group.relative.bg-gradient-to-br.from-blue-600\\/80.to-blue-800\\/80 p {
+          .group.relative.bg-gradient-to-br.from-sky-600\\/80.to-sky-800\\/80 p {
             font-size: 0.9rem;
             line-height: 1.5;
           }
           
-          .group.relative.bg-gradient-to-br.from-blue-600\\/80.to-blue-800\\/80 .w-16.h-16.sm\\:w-20.sm\\:h-20,
-          .group.relative.bg-gradient-to-br.from-blue-600\\/80.to-blue-800\\/80 .w-20.h-20 {
+          .group.relative.bg-gradient-to-br.from-sky-600\\/80.to-sky-800\\/80 .w-16.h-16.sm\\:w-20.sm\\:h-20,
+          .group.relative.bg-gradient-to-br.from-sky-600\\/80.to-sky-800\\/80 .w-20.h-20 {
             width: 3.5rem;
             height: 3.5rem;
             margin-bottom: 1rem;
           }
           
-          .group.relative.bg-gradient-to-br.from-blue-600\\/80.to-blue-800\\/80 .text-2xl.sm\\:text-3xl {
+          .group.relative.bg-gradient-to-br.from-sky-600\\/80.to-sky-800\\/80 .text-2xl.sm\\:text-3xl {
             font-size: 1.5rem;
           }
           
@@ -1558,7 +1626,7 @@ const Service = () => {
             gap: 1.5rem;
           }
           
-          .group.relative.bg-gradient-to-br.from-blue-600\\/80.to-blue-800\\/80 {
+          .group.relative.bg-gradient-to-br.from-sky-600\\/80.to-sky-800\\/80 {
             min-height: 300px;
             padding: 1.75rem;
           }
@@ -1683,7 +1751,7 @@ const Service = () => {
 
         /* Enhanced accessibility */
         .cursor-pointer:focus-visible {
-          outline: 2px solid #3b82f6;
+          outline: 2px solid #0ea5e9;
           outline-offset: 2px;
           border-radius: 0.5rem;
         }
@@ -1695,7 +1763,7 @@ const Service = () => {
         
         /* Improved button states */
         button:focus-visible {
-          outline: 2px solid #3b82f6;
+          outline: 2px solid #0ea5e9;
           outline-offset: 2px;
         }
         

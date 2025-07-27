@@ -156,26 +156,26 @@ const PaintProtectionFilm = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/65 to-blue-700/60 z-10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.3)_0%,transparent_50%)] z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-900/70 via-sky-800/65 to-sky-700/60 z-10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.3)_0%,transparent_50%)] z-10"></div>
         <img 
           src="https://actioncardetailing.ca/wp-content/uploads/2024/06/ppf_banner.jpg" 
           alt="Paint Protection Film Hero"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-sky-400 via-sky-300 to-sky-200 bg-clip-text text-transparent drop-shadow-2xl">
             PAINT PROTECTION FILM
           </h1>
-          <p className="text-xl md:text-2xl mb-4 text-blue-200">Say Goodbye To...</p>
+          <p className="text-xl md:text-2xl mb-4 text-sky-200">Say Goodbye To...</p>
           <div className="h-12 md:h-16 mb-8">
-            <h2 className="text-3xl md:text-5xl font-bold text-blue-300 animate-pulse">
+            <h2 className="text-3xl md:text-5xl font-bold text-sky-300 animate-pulse">
               {runningTexts[currentText]}
             </h2>
           </div>
-          <p className="text-lg md:text-xl mb-8 text-blue-200">Before It Ever Happens</p>
-          <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-200 mx-auto rounded-full mb-8"></div>
-          <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl">
+          <p className="text-lg md:text-xl mb-8 text-sky-200">Before It Ever Happens</p>
+          <div className="h-1 w-32 bg-gradient-to-r from-sky-400 to-sky-200 mx-auto rounded-full mb-8"></div>
+          <button className="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl">
             Get A Free Quote
           </button>
         </div>
@@ -185,20 +185,20 @@ const PaintProtectionFilm = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-sky-400 mb-6">
               PAINT PROTECTION FILM SPECIALIST
             </h2>
-            <p className="text-blue-700 max-w-4xl mx-auto text-lg leading-relaxed">
+            <p className="text-sky-400 max-w-4xl mx-auto text-lg leading-relaxed">
               Below you will find our Paint Protection Film options, these packages are custom tailored to your vehicle needs. Our PPF installation comes with a 10 Year Manufacturer Warranty, self healing properties and installed by trained and experienced technicians.
             </p>
           </div>
 
           {/* Video Section */}
           <div className="max-w-4xl mx-auto mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-blue-900">
+            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-sky-400">
               WATCH VIDEO
             </h3>
-            <div className="relative bg-blue-900 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative bg-sky-900 rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-video">
                 <iframe 
                   src="https://www.youtube.com/embed/hI4lW8uNRqY" 
@@ -215,21 +215,21 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* Why PPF Section */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-sky-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-blue-900">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-sky-400">
             WHY PAINT PROTECTION FILM?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-b from-blue-600 to-blue-700 p-6 rounded-xl text-center hover:transform hover:scale-105 transition-all duration-300 shadow-xl text-white">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
+              <div key={index} className="bg-gradient-to-b from-sky-600 to-sky-700 p-6 rounded-xl text-center hover:transform hover:scale-105 transition-all duration-300 shadow-xl text-white">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-sky-600">
                   {benefit.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-blue-100 text-sm leading-relaxed">
+                <p className="text-sky-100 text-sm leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -242,10 +242,10 @@ const PaintProtectionFilm = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-sky-400 mb-8">
               Enjoy Peace of Mind and Protect Your Investment
             </h2>
-            <p className="text-blue-700 max-w-4xl mx-auto text-lg leading-relaxed mb-8">
+            <p className="text-sky-400 max-w-4xl mx-auto text-lg leading-relaxed mb-8">
               PPF or "Clear Bra" is designed to minimize damage from rock chips, scratches, and road debris. 
               We use templates that have been modified to custom wrap edges where applicable for an invisible install and because of our 
               meticulous installation process we stand behind our workmanship and your satisfaction.
@@ -262,14 +262,14 @@ const PaintProtectionFilm = () => {
             </div>
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">INCREASE AND RETAIN RESELL VALUE</h3>
-                <p className="text-blue-700 leading-relaxed">
+                <h3 className="text-2xl font-bold text-sky-400 mb-4">INCREASE AND RETAIN RESELL VALUE</h3>
+                <p className="text-sky-400 leading-relaxed">
                   Enhance the long-term value of your vehicle with our premium protection solutions. Our cutting-edge products not only shield your car from the elements but also ensure that it's resell value remains at its peak, making it a smart investment for years to come.
                 </p>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">HIGHEST LEVEL OF PROTECTION</h3>
-                <p className="text-blue-700 leading-relaxed">
+                <h3 className="text-2xl font-bold text-sky-400 mb-4">HIGHEST LEVEL OF PROTECTION</h3>
+                <p className="text-sky-400 leading-relaxed">
                   Experience unmatched defense. Our advanced solutions provide the utmost protection against chips, scratches, and the elements.
                 </p>
               </div>
@@ -277,7 +277,7 @@ const PaintProtectionFilm = () => {
           </div>
 
           {/* XPEL Section */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-r from-sky-600 to-sky-700 rounded-2xl p-8 md:p-12 text-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="mb-8">
@@ -287,7 +287,7 @@ const PaintProtectionFilm = () => {
                     className="h-16 mb-4"
                   />
                   <h3 className="text-3xl font-bold mb-4">Why XPEL?</h3>
-                  <p className="text-blue-100 mb-6 leading-relaxed">
+                  <p className="text-sky-100 mb-6 leading-relaxed">
                     Not all Paint Protection Film is created equally. XPEL ULTIMATE PLUS is the industry leader for a reason. A trusted non-yellowing paint protection film that can self-heal minor scratches and swirls in the top coat.
                   </p>
                 </div>
@@ -308,28 +308,28 @@ const PaintProtectionFilm = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <h4 className="text-xl font-bold text-blue-200 mb-3">Self-Healing Topcoat</h4>
-                  <p className="text-blue-100">Constructed from a polyurethane, ULTIMATE PLUS will self-heal light scratches & swirls</p>
+                  <h4 className="text-xl font-bold text-sky-200 mb-3">Self-Healing Topcoat</h4>
+                  <p className="text-sky-100">Constructed from a polyurethane, ULTIMATE PLUS will self-heal light scratches & swirls</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <h4 className="text-xl font-bold text-blue-200 mb-3">Non-Yellowing</h4>
-                  <p className="text-blue-100">Proprietary film will not yellow from UV exposure, staying nearly invisible</p>
+                  <h4 className="text-xl font-bold text-sky-200 mb-3">Non-Yellowing</h4>
+                  <p className="text-sky-100">Proprietary film will not yellow from UV exposure, staying nearly invisible</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <h4 className="text-xl font-bold text-blue-200 mb-3">Stain Resistant</h4>
-                  <p className="text-blue-100">ULTIMATE PLUS is stain resistant & will maintain clarity against contaminants</p>
+                  <h4 className="text-xl font-bold text-sky-200 mb-3">Stain Resistant</h4>
+                  <p className="text-sky-100">ULTIMATE PLUS is stain resistant & will maintain clarity against contaminants</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <h4 className="text-xl font-bold text-blue-200 mb-3">Prevents Wear & Tear</h4>
-                  <p className="text-blue-100">Stop rock chips, nicks & scratches in the paint, and keep your vehicle looking new</p>
+                  <h4 className="text-xl font-bold text-sky-200 mb-3">Prevents Wear & Tear</h4>
+                  <p className="text-sky-100">Stop rock chips, nicks & scratches in the paint, and keep your vehicle looking new</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <h4 className="text-xl font-bold text-blue-200 mb-3">Edge Seal Technology</h4>
-                  <p className="text-blue-100">Lifting & delamination are a thing of the past as our Edge Seal Technology ensures film stays stuck & keeps surfaces protected</p>
+                  <h4 className="text-xl font-bold text-sky-200 mb-3">Edge Seal Technology</h4>
+                  <p className="text-sky-100">Lifting & delamination are a thing of the past as our Edge Seal Technology ensures film stays stuck & keeps surfaces protected</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <h4 className="text-xl font-bold text-blue-200 mb-3">Warranty and Durability</h4>
-                  <p className="text-blue-100">Superior Impact Protection and Industry Leading 10 Year Warranty</p>
+                  <h4 className="text-xl font-bold text-sky-200 mb-3">Warranty and Durability</h4>
+                  <p className="text-sky-100">Superior Impact Protection and Industry Leading 10 Year Warranty</p>
                 </div>
               </div>
             </div>
@@ -338,12 +338,12 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* Financing Section */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-sky-50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-sky-400 mb-8">
             FINANCING AVAILABLE
           </h2>
-          <p className="text-blue-700 mb-8">Click below to learn more</p>
+          <p className="text-sky-400 mb-8">Click below to learn more</p>
           <img 
             src="https://actioncardetailing.ca/wp-content/uploads/2021/05/financeit.jpg.webp"
             alt="Financeit"
@@ -355,34 +355,34 @@ const PaintProtectionFilm = () => {
       {/* Packages Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-blue-900">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-sky-400">
             SELECT YOUR COVERAGE
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {packages.map((pkg, index) => (
-              <div key={index} className="bg-gradient-to-b from-blue-600 to-blue-700 rounded-2xl p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-2xl text-white">
+              <div key={index} className="bg-gradient-to-b from-sky-600 to-sky-700 rounded-2xl p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-2xl text-white">
                 <div className="text-center mb-6">
                   <img 
                     src="https://actioncardetailing.ca/wp-content/uploads/2021/05/Bumper.png"
                     alt={pkg.name}
                     className="w-full h-32 object-contain mb-4"
                   />
-                  <h3 className="text-xl font-bold text-blue-200 mb-2">{pkg.name}</h3>
+                  <h3 className="text-xl font-bold text-sky-200 mb-2">{pkg.name}</h3>
                   <div className="text-2xl font-bold mb-2">Starting at {pkg.price}</div>
-                  <div className="text-blue-100">Service Time {pkg.serviceTime}</div>
+                  <div className="text-sky-100">Service Time {pkg.serviceTime}</div>
                 </div>
                 
                 <div className="space-y-3 mb-6">
-                  <h4 className="text-blue-200 font-semibold">WHAT IS INCLUDED:</h4>
+                  <h4 className="text-sky-200 font-semibold">WHAT IS INCLUDED:</h4>
                   {pkg.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-blue-200 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-blue-100 text-sm">{feature}</p>
+                      <div className="w-2 h-2 bg-sky-200 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sky-100 text-sm">{feature}</p>
                     </div>
                   ))}
                 </div>
                 
-                <button className="w-full bg-white text-blue-600 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-blue-50">
+                <button className="w-full bg-white text-sky-600 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-sky-50">
                   Get Quote
                 </button>
               </div>
@@ -392,7 +392,7 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* Road Doesn't Have to Win */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-sky-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -403,15 +403,15 @@ const PaintProtectionFilm = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-sky-400 mb-6">
                 THE ROAD DOESN'T HAVE TO WIN...
               </h2>
-              <div className="space-y-4 text-blue-700 mb-8">
+              <div className="space-y-4 text-sky-400 mb-8">
                 <p>We get it. The thought of rock chips, scratches, weathering, oxidation, UV rays, stains, and fading create STRESS and ANXIETY.</p>
                 <p>Fact- There is 100% chance that doing nothing will ensure inevitable damage!</p>
-                <p className="text-xl font-semibold text-blue-600">We Provide The Peace of mind you and your vehicle deserve</p>
+                <p className="text-xl font-semibold text-sky-400">We Provide The Peace of mind you and your vehicle deserve</p>
               </div>
-              <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <button className="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Get A Free Quote
               </button>
             </div>
@@ -422,44 +422,44 @@ const PaintProtectionFilm = () => {
       {/* Company Trust Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-blue-700 leading-relaxed max-w-4xl mx-auto mb-8">
+          <p className="text-sky-400 leading-relaxed max-w-4xl mx-auto mb-8">
             When you pay for a product with extensive warranties, you want to use a solid company for the service. The world's top paint 
             protection films offer up to 10 years of warranty. You need a company with a long history of successful projects and just as 
             importantly, future longevity. Yes, films are guaranteed based on the quality of the film itself. However, it's the shop that 
             guarantees the work done. You want a company like us because you know we will be here, doing what we do and standing by our 
-            products. Our meticulous attention to detail here at <span className="text-blue-600 font-bold">ACTION CAR DETAILING</span> is sure to keep your mind at ease. You can rest 
+            products. Our meticulous attention to detail here at <span className="text-sky-400 font-bold">ACTION CAR DETAILING</span> is sure to keep your mind at ease. You can rest 
             assured knowing your vehicle will receive an expert application of a superior PPF product.
           </p>
-          <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+          <button className="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
             Get A Free Quote
           </button>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-sky-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-sky-400 mb-4">
               DISCOVER THE HIGHEST LEVEL OF PAINT PROTECTION FILM IN WINNIPEG
             </h2>
-            <h3 className="text-2xl font-bold text-blue-600 mb-8">
+            <h3 className="text-2xl font-bold text-sky-400 mb-8">
               WHY DO I NEED PAINT PROTECTION FILM?
             </h3>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-4">
             {faqData.map((faq, index) => (
-              <div key={index} className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl overflow-hidden shadow-xl">
+              <div key={index} className="bg-gradient-to-r from-sky-600 to-sky-700 rounded-xl overflow-hidden shadow-xl">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left flex justify-between items-center hover:bg-blue-500/50 transition-colors duration-300 text-white"
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-sky-500/50 transition-colors duration-300 text-white"
                 >
                   <h4 className="text-xl font-semibold">{faq.question}</h4>
                   {openFAQ === index ? (
-                    <ChevronUp className="w-6 h-6 text-blue-200" />
+                    <ChevronUp className="w-6 h-6 text-sky-200" />
                   ) : (
-                    <ChevronDown className="w-6 h-6 text-blue-200" />
+                    <ChevronDown className="w-6 h-6 text-sky-200" />
                   )}
                 </button>
                 {openFAQ === index && (
@@ -467,12 +467,12 @@ const PaintProtectionFilm = () => {
                     <div className="space-y-3">
                       {faq.answer.map((point, pointIndex) => (
                         <div key={pointIndex} className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-blue-200 rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-blue-100">{point}</p>
+                          <div className="w-2 h-2 bg-sky-200 rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-sky-100">{point}</p>
                         </div>
                       ))}
                     </div>
-                    <button className="mt-6 bg-white text-blue-600 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:bg-blue-50">
+                    <button className="mt-6 bg-white text-sky-600 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:bg-sky-50">
                       GET MY QUOTE
                     </button>
                   </div>
