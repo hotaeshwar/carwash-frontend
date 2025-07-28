@@ -23,22 +23,31 @@ const Hero = () => {
       const adjustVideoFit = () => {
         const width = window.innerWidth;
         const height = window.innerHeight;
+        const aspectRatio = width / height;
         
         // Mobile screens (below 768px)
         if (width < 768) {
-          video.style.objectFit = 'fill';
-          video.style.objectPosition = 'center center';
+          // For very narrow screens, use contain to show full content
+          if (aspectRatio < 0.6) {
+            video.style.objectFit = 'contain';
+            video.style.objectPosition = 'center center';
+          } else {
+            video.style.objectFit = 'cover';
+            video.style.objectPosition = 'center top';
+          }
           video.style.height = '100vh';
           video.style.width = '100vw';
         }
         // iPad Mini: 768x1024, iPad Air: 820x1180, iPad Pro: 1024x1366
-        else if (width >= 768 && width <= 1024 && width !== 1024) {
-          // iPad Mini and Air
-          video.style.objectFit = 'fill';
+        else if (width >= 768 && width <= 1366) {
+          // For all iPads, use contain to show full content - no cropping
+          video.style.objectFit = 'contain';
           video.style.objectPosition = 'center center';
-        } else if (width >= 1024) {
-          // iPad Pro - use fill for better fitting
-          video.style.objectFit = 'fill';
+          video.style.height = '100vh';
+          video.style.width = '100vw';
+        } else {
+          // Desktop - use cover with center positioning
+          video.style.objectFit = 'cover';
           video.style.objectPosition = 'center center';
           video.style.height = '100vh';
           video.style.width = '100vw';
@@ -74,12 +83,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-snow">
+    <div className="relative h-screen w-full overflow-hidden bg-black">
       {/* Video background - single optimized video */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-black">
         <video
           ref={videoRef}
-          className="absolute top-0 left-0 w-full h-full object-fill object-center sm:object-cover md:object-fill lg:object-fill xl:object-fill"
+          className="absolute top-0 left-0 w-full h-full object-cover object-center sm:object-top"
           src={carwashVideo}
           autoPlay
           loop
@@ -91,7 +100,11 @@ const Hero = () => {
           style={{
             transform: 'translateZ(0)',
             backfaceVisibility: 'hidden',
-            objectPosition: window.innerWidth >= 768 && window.innerWidth <= 1024 ? 'center top' : 'center center'
+            objectPosition: window.innerWidth >= 768 && window.innerWidth <= 1366 ? 
+              'center center' : 
+              (window.innerWidth < 768 ? 
+                (window.innerWidth / window.innerHeight < 0.6 ? 'center center' : 'center top') : 
+                'center center')
           }}
         />
       </div>
