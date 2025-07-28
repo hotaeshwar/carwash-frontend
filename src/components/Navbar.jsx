@@ -110,11 +110,11 @@ const Navbar = ({ currentView, setCurrentView }) => {
 
   return (
     <>
-      {/* Award Logo - Now positioned inline with navbar */}
+      {/* Award Logo - Enhanced for better mobile visibility */}
       <div className="fixed top-0 right-2 sm:right-3 md:right-4 lg:right-5 xl:right-6 z-30 flex items-center h-14 sm:h-16 md:h-18 lg:h-20 xl:h-22">
         <div className="transform transition-transform hover:scale-110">
           <img 
-            className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-36 2xl:h-44 w-auto filter drop-shadow-2xl max-w-[140px] sm:max-w-[200px] md:max-w-[260px] lg:max-w-[330px] xl:max-w-[350px] object-contain" 
+            className="h-36 sm:h-40 md:h-44 lg:h-48 xl:h-52 2xl:h-60 w-auto filter drop-shadow-2xl max-w-[220px] sm:max-w-[280px] md:max-w-[340px] lg:max-w-[390px] xl:max-w-[420px] object-contain" 
             src={awardLogo} 
             alt="Consumer Choice Award 2025"
           />
@@ -126,13 +126,15 @@ const Navbar = ({ currentView, setCurrentView }) => {
         <div className={`transition-all duration-300 bg-transparent`}>
           <div className="max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8">
             <div className="flex justify-between items-center h-14 sm:h-16 md:h-18 lg:h-20 xl:h-22">
-              {/* Logo */}
-              <div className="flex-shrink-0 transform transition-transform hover:scale-105 cursor-pointer" onClick={() => handleNavClick('home')}>
-                <img 
-                  className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 w-auto filter drop-shadow-lg max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] xl:max-w-[200px] object-contain" 
-                  src={actionCarLogo} 
-                  alt="Action Car Detailing Logo" 
-                />
+              {/* Logo with White Background */}
+              <div className="flex-shrink-0 transform transition-transform hover:scale-105 cursor-pointer ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-20" onClick={() => handleNavClick('home')}>
+                <div className="logo-container">
+                  <img 
+                    className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-18 w-auto filter drop-shadow-lg max-w-[140px] sm:max-w-[160px] md:max-w-[180px] lg:max-w-[200px] xl:max-w-[220px] object-contain" 
+                    src={actionCarLogo} 
+                    alt="Action Car Detailing Logo" 
+                  />
+                </div>
               </div>
 
               {/* Desktop Navigation - Hidden on mobile and tablet */}
@@ -294,8 +296,69 @@ const Navbar = ({ currentView, setCurrentView }) => {
           </div>
         )}
 
-        {/* CSS for the trapezoid buttons and nav links */}
+        {/* CSS for the trapezoid buttons, nav links, and logo background */}
         <style jsx>{`
+          .logo-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 8px 12px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            margin-left: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 2px solid #e5e7eb;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+          }
+          
+          .logo-container:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: #87CEEB;
+          }
+          
+          /* Responsive logo container adjustments */
+          @media (max-width: 640px) {
+            .logo-container {
+              padding: 6px 10px;
+              margin-top: 18px;
+              margin-bottom: 6px;
+              margin-left: 3px;
+              border-radius: 10px;
+            }
+          }
+          
+          @media (min-width: 641px) and (max-width: 768px) {
+            .logo-container {
+              padding: 7px 11px;
+              margin-top: 19px;
+              margin-bottom: 7px;
+              margin-left: 3px;
+              border-radius: 11px;
+            }
+          }
+          
+          @media (min-width: 1024px) {
+            .logo-container {
+              padding: 10px 14px;
+              margin-top: 22px;
+              margin-bottom: 10px;
+              margin-left: 6px;
+              border-radius: 14px;
+            }
+          }
+          
+          @media (min-width: 1280px) {
+            .logo-container {
+              padding: 12px 16px;
+              margin-top: 24px;
+              margin-bottom: 12px;
+              margin-left: 8px;
+              border-radius: 16px;
+            }
+          }
+          
           .trapezoid-button {
             position: relative;
             display: inline-block;
